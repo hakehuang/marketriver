@@ -10,6 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20110806145602) do
+
+  create_table "users", :force => true do |t|
+    t.string   "mail"
+    t.string   "nickname"
+    t.decimal  "phone",           :precision => 10, :scale => 0
+    t.integer  "credits"
+    t.string   "passwd"
+    t.string   "maintanance"
+    t.boolean  "maintanceStatus"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

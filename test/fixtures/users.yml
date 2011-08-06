@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 
+  mail: MyString
+  nickname: MyString
+  phone: 9.99
+  credits: 1
+  passwd: MyString
+  maintanance: MyString
+  maintanceStatus: false
+
+two:
+  id: 
+  mail: MyString
+  nickname: MyString
+  phone: 9.99
+  credits: 1
+  passwd: MyString
+  maintanance: MyString
+  maintanceStatus: false
