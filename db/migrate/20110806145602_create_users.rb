@@ -6,8 +6,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :phone
       t.integer :credits
       t.string :passwd
-      t.string :maintanance
-      t.boolean :maintanceStatus
+      t.string :maintenance
+      t.boolean :Status
 
       t.timestamps
     end

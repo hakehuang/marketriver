@@ -10,16 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110806145602) do
+ActiveRecord::Schema.define(:version => 20110806160033) do
 
   create_table "users", :force => true do |t|
     t.string   "mail"
     t.string   "nickname"
     t.string   "phone"
-    t.integer  "credits"
+    t.string   "credits",     :default => "100"
     t.string   "passwd"
-    t.string   "maintanance"
-    t.boolean  "maintanceStatus"
+    t.string   "maintenance", :default => "NA"
+    t.boolean  "Status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
