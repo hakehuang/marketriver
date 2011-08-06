@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20110806145602) do
   create_table "users", :force => true do |t|
     t.string   "mail"
     t.string   "nickname"
-    t.decimal  "phone",           :precision => 10, :scale => 0
+    t.string   "phone"
     t.integer  "credits"
     t.string   "passwd"
     t.string   "maintanance"
