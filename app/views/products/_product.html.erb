@@ -8,4 +8,8 @@
     <%= product.content %>
   </p>
 
-
+<p>
+  <%= link_to 'Destroy Product', [product.user, product],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+</p>
