@@ -10,6 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20110807033140) do
+
+  create_table "set_user_defaults", :force => true do |t|
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "mail"
+    t.string   "nickname"
+    t.string   "phone"
+    t.string   "credits",     :default => "100"
+    t.string   "passwd"
+    t.string   "maintenance", :default => "NA"
+    t.boolean  "Status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

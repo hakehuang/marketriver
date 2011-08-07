@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :credits %><br />
-    <%= f.text_field :credits %>
+    <%= f.text_field :credits , :disabled => "if $('session[user]').value != 'admin' disabled" %>
   </div>
   <div class="field">
     <%= f.label :passwd %><br />
