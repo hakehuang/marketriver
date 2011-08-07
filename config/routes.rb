@@ -1,6 +1,11 @@
 Phoenix::Application.routes.draw do
+  resources :tags
+
   resources :users do
-    resources :products
+    resources :tags
+    resources :products do
+	resources :tags
+    end
   end
 
   get "home/index"

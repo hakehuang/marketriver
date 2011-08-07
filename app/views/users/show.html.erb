@@ -33,6 +33,22 @@
 <h2>Products</h2>
 <%= render :partial => "products/product",
            :collection => @user.products %>
+ 
+<h2>Comments</h2>
+<% @user.tags.each do |tag| %>
+  <p>
+    <b>Name:</b>
+    <%= tag.name %>
+    <b>
+    <%= link_to 'goto', user_tags_path(@user) %>
+    </b>
+    <b>
+  <%= link_to 'Destroy Tags', [tag.user, tag],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+    </b>
+  </p>
+<% end %>
 
 <h2>Add a product:</h2>
 <%= render "products/form" %>

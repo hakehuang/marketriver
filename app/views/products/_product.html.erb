@@ -7,7 +7,17 @@
     <b>Product description:</b>
     <%= product.content %>
   </p>
-
+  <h3> User Tags </h3>
+  <%= product.tags.each do |tag| %>
+   <p>
+     <b> Tags name:</b>
+     <%= tag.name %>
+     </p>
+  <% end %>
+  <p>
+   <%= link_to 'add my tags',{ :controller => "tags", 
+              :action => :new , :user_id => product.user_id, :product_id => product.id , :method => "POST"  } %>
+  </p>
 <p>
   <%= link_to 'Destroy Product', [product.user, product],
                :confirm => 'Are you sure?',
