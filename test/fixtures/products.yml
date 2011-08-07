@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  title: MyString
+  content: MyText
+  status: MyString
+  price: 1
+  RentablePeriod: 2011-08-07
+  user: 
+
+two:
+  name: MyString
+  title: MyString
+  content: MyText
+  status: MyString
+  price: 1
+  RentablePeriod: 2011-08-07
+  user: 

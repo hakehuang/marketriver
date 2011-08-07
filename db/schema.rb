@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110807033140) do
+ActiveRecord::Schema.define(:version => 20110807035210) do
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.text     "content"
+    t.string   "status"
+    t.integer  "price"
+    t.date     "RentablePeriod"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "set_user_defaults", :force => true do |t|
   end
