@@ -31,17 +31,8 @@
 </p>
 
 <h2>Products</h2>
-<% @user.products.each do |product| %>
-  <p>
-    <b>Commenter:</b>
-    <%= product.name %>
-  </p>
- 
-  <p>
-    <b>Comment:</b>
-    <%= product.content %>
-  </p>
-<% end %>
+<%= render :partial => "products/product",
+           :collection => @user.products %>
 
 <h2>Add a product:</h2>
 <%= form_for([@user, @user.products.build]) do |f| %>
