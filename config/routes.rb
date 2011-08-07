@@ -1,5 +1,7 @@
 Phoenix::Application.routes.draw do
-  resources :users
+  resources :users do
+    resources :products
+  end
 
   get "home/index"
 
