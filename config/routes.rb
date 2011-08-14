@@ -1,4 +1,6 @@
 Phoenix::Application.routes.draw do
+  resources :products
+
   resources :customers
 
   devise_for :users
