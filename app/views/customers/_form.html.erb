@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag "display.css" %>
+<%= form_for(@customer) do |f| %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+      <% @customer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :credits %><br />
+    <%= f.text_field :credits ,:disabled => "if $('session[user]').value != 'admin' disabled"%>
+  </div>
+  <div class="field">
+    <%= f.label :maintenance %><br />
+    <%= f.text_field :maintenance %>
+  </div>
+  <div class="field">
+    <%= f.label :Status %><br />
+    <%= f.check_box :Status %>
+  </div>
+  <div class="field" >
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id, :disabled => "disabled",:class=>'textbg' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

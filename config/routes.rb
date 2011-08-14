@@ -1,4 +1,6 @@
 Phoenix::Application.routes.draw do
+  resources :customers
+
   devise_for :users
 
   get "home/index"
