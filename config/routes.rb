@@ -5,6 +5,9 @@ Phoenix::Application.routes.draw do
 
   get "home/index"
 
+  match "/upload" => "upload#index"
+  match "/upload/uploadFile" => "upload#uploadFile"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
