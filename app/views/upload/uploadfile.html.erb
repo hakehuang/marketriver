@@ -1,7 +1,33 @@
+<script language="javascript">
+
+HTMLElement.prototype.insertAdjacentHTML=function(where, html)
+{
+  var e=this.ownerDocument.createRange();
+  e.setStartBefore(this);
+  e=e.createContextualFragment(html);
+  switch (where)
+  {
+    case 'beforeBegin': this.parentNode.insertBefore(e, this);break;
+    case 'afterBegin': this.insertBefore(e, this.firstChild); break;
+    case 'beforeEnd': this.appendChild(e); break;
+    case 'afterEnd':
+      if(!this.nextSibling) this.parentNode.appendChild(e);
+      else this.parentNode.insertBefore(e, this.nextSibling); break;
+  }
+}
+
+function addText(){
+    var str ='<input id="file1" name="upload[]" type="file" /></br>';
+    document.getElementById('MyFile').insertAdjacentHTML("beforeEnd",str);   
+}
+</script>
+
+<%= stylesheet_link_tag "display.css" %>
 <h1>Image to upload</h1>
 <%= form_tag ({:action => 'uploadFile'}, :multipart => true) do %>
-<p><label for="upload_file">Select File</label> :</p><p> 
-<%= file_field 'upload', 'datafile' %>
-</p>
+<div id="MyFile">
+<input id="file" name="upload[]" size="30" type="file" /></br>
+ </div> 
+<input type="button" value="add" onclick="addText()"/>
 <%= submit_tag "Upload" %>
 <% end %> 
