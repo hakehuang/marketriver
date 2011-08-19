@@ -77,6 +77,8 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
+    @datafile = @product.comments.find(params[:id])
+    @datafile.destroy
 
     respond_to do |format|
       format.html { redirect_to(products_url) }

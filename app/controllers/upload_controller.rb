@@ -9,10 +9,9 @@ class UploadController < ApplicationController
      end    
   end
  
-  def uploadFile
+  def uploadFile()
     i = params[:upload].size
     for num in (0..i-1)
-    	#post = DataFile.save(params[:upload][num])
       file = params[:upload][num]
       if !file.original_filename.empty?
         @filename=getFileName(file.original_filename)
@@ -20,7 +19,7 @@ class UploadController < ApplicationController
         File.open("#{RAILS_ROOT}/public/data/#{@filename}", "wb") do |f|
         f.write(file.read)
       end
-      #DataFile.save(@filename,current_user.id,params[:id])
+      DataFile.savefile(@filename,current_user.id,params[:product_id])
      end
     end
     render :text => "File has been uploaded successfully"
