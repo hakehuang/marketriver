@@ -37,6 +37,9 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    if ( @product.user_id != current_user.id)
+       redirect_to products_path,:notice => 'You do not own this products'
+    end
   end
 
   # POST /products
@@ -77,7 +80,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    @datafile = @product.comments.find(params[:id])
+    @datafile = @product.DataFiles.find(params[:id])
     @datafile.destroy
 
     respond_to do |format|

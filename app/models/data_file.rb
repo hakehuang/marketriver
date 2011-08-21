@@ -2,7 +2,7 @@ class DataFile < ActiveRecord::Base
 
  belongs_to :product
 
- def self.savefile(filename,product_id,user_id)
+ def self.savefile(filename,user_id, product_id)
     # update to data base
    @datafile = DataFile.new
    @datafile.path=filename
