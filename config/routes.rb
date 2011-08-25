@@ -12,6 +12,7 @@ end
 
   match "/upload" => "upload#index"
   match "/upload/uploadFile" => "upload#uploadFile"
+  match "/delete/datafile" => "DataFile#destroy"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

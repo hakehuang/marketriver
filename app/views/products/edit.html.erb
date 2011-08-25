@@ -2,6 +2,17 @@
 
 <%= render 'form' %>
 
+<% @product.DataFiles.each do |image| %>
+ <div> 
+ <p>
+ <%= image_tag(image.path) %>
+  </p>
+<p>
+  <%= link_to 'Delete', delete_datafile_path(:id => image.id),:confirm => 'Are you sure?',:method => :delete %>
+</p>
+</div>
+<% end %>
+
 <%= link_to 'add pictures',upload_path(:product_id => @product.id) %>
 
 <%= link_to 'Show', @product %> |

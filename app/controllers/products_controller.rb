@@ -80,8 +80,6 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    @datafile = @product.DataFiles.find(params[:id])
-    @datafile.destroy
 
     respond_to do |format|
       format.html { redirect_to(products_url) }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110819141518) do
+ActiveRecord::Schema.define(:version => 20110825132928) do
 
   create_table "customers", :force => true do |t|
     t.string   "nickname"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20110819141518) do
     t.integer  "user_id"
     t.integer  "product_id"
   end
+
+  add_index "data_files", ["path"], :name => "index_data_files_on_path", :unique => true
 
   create_table "products", :force => true do |t|
     t.string   "name"

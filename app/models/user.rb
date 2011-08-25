@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  has_many :products
+  has_many :products, :dependent => :destroy
+  has_many :customers, :dependent => :destroy
 end
 
 # migration

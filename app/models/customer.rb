@@ -1,4 +1,4 @@
 class Customer < ActiveRecord::Base
   belongs_to :user
-attr_protected :credits
+  attr_protected :credits
 end
