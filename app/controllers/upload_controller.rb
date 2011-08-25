@@ -19,11 +19,11 @@ class UploadController < ApplicationController
         File.open("#{RAILS_ROOT}/public/data/#{@filename}", "wb") do |f|
         f.write(file.read)
       end
-      DataFile.savefile(@filename,current_user.id)
+      DataFile.savefile(@filename,current_user.id, params[:product]["id"])
      end
     end
-    render :text => "File has been uploaded successfully"
-    @product = Product.find()
-    redirect_to(@product)
+    #render :text => "File has been uploaded successfully"
+    @product = Product.find(params[:product]["id"])
+    redirect_to(@product) and return
   end
 end

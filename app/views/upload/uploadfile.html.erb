@@ -28,7 +28,7 @@ function addText(){
 <div id="MyFile">
 <input id="file" name="upload[]" size='30' type="file" /></br>
  </div> 
-<%= text_field 'product','id', 'size' => 30, 'disabled' => 'true', :value => params[:product_id] %>
+<%= text_field 'product','id', 'size' => 30, :value => params[:product_id] %>
 <input type="button" value="add" onclick="addText()"/>
 <%= submit_tag "Upload" %>
 <% end %> 
