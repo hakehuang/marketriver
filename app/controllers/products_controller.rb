@@ -11,6 +11,34 @@ class ProductsController < ApplicationController
     end
   end
 
+  def borrow
+    @product = Product.find(params[:id])
+    @transact = 0
+    
+    if (current_user.id != @product.user.id )
+	@render = User.find(@product.user_id)
+        @borrower = User.find(current_user.id)
+
+	for @customer in @borrower.customers
+		if (@customer.credit > 2)
+		@customer.credit = @customer.credit - 2
+                @transact = 1
+		@customer.save
+		end  
+        end
+	if ( @transact == 1)
+	 for @customer in @render.customers
+		@customer.credit = @customer.credit + 2  
+		@customer.save
+         end
+        @product.status = "Lended"
+        @product.save
+       redirect_to products_path,:notice => 'you have borrow this products'
+        end
+    else
+       redirect_to products_path,:notice => 'it is your own products'
+    end
+  end
   # GET /products/1
   # GET /products/1.xml
   def show

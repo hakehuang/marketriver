@@ -1,39 +1,29 @@
 <h1>Listing products</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Status</th>
-    <th>Price</th>
-    <th>Rentableperiod</th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div class="float_li">
+<ul>
 <% @products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.title %></td>
-    <td><%= product.content %></td>
-    <td><%= product.status %></td>
-    <td><%= product.price %></td>
-    <td><%= product.RentablePeriod %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
-    <td>
+     <li>
 	<% product.DataFiles.each do |image| %>
  		<%= image_tag(image.path) %>
 	<% end %>    
-    </td>
-  </tr>
+    	<%= link_to 'go for it', product %>
+    <table>
+    <tr>
+    <th>Name</th>
+    <th>Content</th>
+    <th>Price</th>
+    <th>Status</th>
+    <th>Rentable Time</th>
+    </tr>
+    <tr>
+    <td><%= product.name %></td>
+    <td><%= product.content %></td>
+    <td><%= product.price %></td>
+    <td><%= product.status %></td>
+    <td><%= product.RentablePeriod %></td>
+    </tr>
+    </table>
+    </li>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Product', new_product_path %>
+</ul>
+</div>

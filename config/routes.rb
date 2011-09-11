@@ -13,6 +13,7 @@ end
   match "/upload" => "upload#index"
   match "/upload/uploadFile" => "upload#uploadFile"
   match "/delete/datafile" => "DataFile#destroy"
+  match "/products/:id/borrow" => "Product#borrow"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

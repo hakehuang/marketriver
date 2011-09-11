@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<div class="float_left">
 <p>
   <b>Name:</b>
   <%= @product.name %>
@@ -29,12 +30,16 @@
   <b>Rentableperiod:</b>
   <%= @product.RentablePeriod %>
 </p>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+<%= link_to 'borrow me', products_path(@product) %>
+</div>
 
+<div>
 <% @product.DataFiles.each do |image| %>
   <p>
  <%= image_tag(image.path) %>
   </p>
 <% end %>
+</div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
