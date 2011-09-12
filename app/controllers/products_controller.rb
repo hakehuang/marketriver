@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   end
 
   def borrow
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:product]["id"])
     @transact = 0
     
     if (current_user.id != @product.user.id )

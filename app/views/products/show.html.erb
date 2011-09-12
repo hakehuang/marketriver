@@ -32,9 +32,10 @@
 </p>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
-<form action="/borrow">
+<%= form_tag (:action => "borrow") do %>
+<%= hidden_field  "product", "id", :value => @product.id %>
 <input type="submit" value="Borrow me" />
-</form>
+<% end %>
 </div>
 
 <div>
