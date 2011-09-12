@@ -1,12 +1,8 @@
 <h1>Listing products</h1>
-<div class="float_li">
 <ul>
 <% @products.each do |product| %>
-     <li>
-	<% product.DataFiles.each do |image| %>
- 		<%= image_tag(image.path) %>
-	<% end %>    
-    	<%= link_to 'go for it', product %>
+<%= link_to 'go for it', product %>
+<div class="flaot_left">
     <table>
     <tr>
     <th>Name</th>
@@ -23,7 +19,14 @@
     <td><%= product.RentablePeriod %></td>
     </tr>
     </table>
+</div>
+<div>
+     <li>
+	<% product.DataFiles.each do |image| %>
+ 		<%= image_tag(image.path) %>
+	<% end %>    
     </li>
+</div>
+<br calss="floatstop"> </br>
 <% end %>
 </ul>
-</div>
