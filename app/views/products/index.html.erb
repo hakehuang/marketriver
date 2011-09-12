@@ -1,10 +1,10 @@
 <h1>Listing products</h1>
 <ul>
 <% @products.each do |product| %>
-<%= link_to 'go for it', product %>
 <div class="flaot_left">
     <table>
     <tr>
+    <th>id</th>
     <th>Name</th>
     <th>Content</th>
     <th>Price</th>
@@ -12,6 +12,7 @@
     <th>Rentable Time</th>
     </tr>
     <tr>
+    <td><%= link_to product.id.to_s, product %></td>
     <td><%= product.name %></td>
     <td><%= product.content %></td>
     <td><%= product.price %></td>
