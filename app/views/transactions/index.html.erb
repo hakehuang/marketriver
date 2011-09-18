@@ -1,0 +1,37 @@
+<h1>Listing transactions</h1>
+
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Trans stime</th>
+    <th>Trans etime</th>
+    <th>Status</th>
+    <th>Product</th>
+    <th>User</th>
+    <th>Borrow customer</th>
+    <th>Lent customer</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @transactions.each do |transaction| %>
+  <tr>
+    <td><%= transaction.Product %></td>
+    <td><%= transaction.trans_stime %></td>
+    <td><%= transaction.trans_etime %></td>
+    <td><%= transaction.status %></td>
+    <td><%= transaction.product %></td>
+    <td><%= transaction.user %></td>
+    <td><%= transaction.borrow_customer %></td>
+    <td><%= transaction.lent_customer %></td>
+    <td><%= link_to 'Show', transaction %></td>
+    <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+    <td><%= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Transaction', new_transaction_path %>

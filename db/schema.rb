@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110825132928) do
+ActiveRecord::Schema.define(:version => 20110918144648) do
 
   create_table "customers", :force => true do |t|
     t.string   "nickname"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20110825132928) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "bank_info"
+    t.string   "address"
   end
 
   create_table "data_files", :force => true do |t|
@@ -41,6 +43,18 @@ ActiveRecord::Schema.define(:version => 20110825132928) do
     t.integer  "price"
     t.date     "RentablePeriod"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.date     "trans_stime"
+    t.date     "trans_etime"
+    t.enum     "status",          :limit => [:borrowing, :confirming, :lenting, :logistic], :default => :borrowing
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.integer  "borrow_customer"
+    t.integer  "lent_customer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

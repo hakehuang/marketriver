@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  Product: 
+  trans_stime: 2011-09-18
+  trans_etime: 
+  status: 
+  product: 
+  user: 
+  borrow_customer: 1
+  lent_customer: 1
+
+two:
+  Product: 
+  trans_stime: 2011-09-18
+  trans_etime: 
+  status: 
+  product: 
+  user: 
+  borrow_customer: 1
+  lent_customer: 1

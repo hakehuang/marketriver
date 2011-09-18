@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @transaction.Product %>
+</p>
+
+<p>
+  <b>Trans stime:</b>
+  <%= @transaction.trans_stime %>
+</p>
+
+<p>
+  <b>Trans etime:</b>
+  <%= @transaction.trans_etime %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @transaction.status %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%= @transaction.product %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @transaction.user %>
+</p>
+
+<p>
+  <b>Borrow customer:</b>
+  <%= @transaction.borrow_customer %>
+</p>
+
+<p>
+  <b>Lent customer:</b>
+  <%= @transaction.lent_customer %>
+</p>
+
+
+<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
+<%= link_to 'Back', transactions_path %>

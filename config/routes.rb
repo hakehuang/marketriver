@@ -1,5 +1,7 @@
 Phoenix::Application.routes.draw do
 
+  resources :transactions
+
 resources :products do
   resources :DataFiles
 end
