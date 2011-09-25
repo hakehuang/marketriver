@@ -28,10 +28,11 @@ class TransactionsController < ApplicationController
     if params[:product_id].nil?
        redirect_to products_path,:notice => 'Can not access this directly'
     else
-    @transaction = Transaction.new
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @transaction }
+    	@transaction = Transaction.new
+    	respond_to do |format|
+      		format.html # new.html.erb
+      		format.xml  { render :xml => @transaction }
+    	end
     end
   end
 
