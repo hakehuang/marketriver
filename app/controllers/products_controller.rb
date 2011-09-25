@@ -33,8 +33,10 @@ class ProductsController < ApplicationController
          end
         @product.status = "Lended"
         @product.save
-       redirect_to products_path,:notice => 'you have borrow this products'
+        Transaction.logtransaction(current_user.id,@product.user.id,product.id, 1)
+        redirect_to products_path,:notice => 'you have borrow this products'
         end
+        redirect_to products_path,:notice => 'you can not borrow this product'
     else
        redirect_to products_path,:notice => 'it is your own products'
     end
