@@ -1,33 +1,12 @@
-<h1>Listing products</h1>
+<h1>products</h1>
 <ul>
 <% @products.each do |product| %>
-<div class="flaot_left">
-    <table>
-    <tr>
-    <th>id</th>
-    <th>Name</th>
-    <th>Content</th>
-    <th>Price</th>
-    <th>Status</th>
-    <th>Rentable Time</th>
-    </tr>
-    <tr>
-    <td><%= link_to product.id.to_s, product %></td>
-    <td><%= product.name %></td>
-    <td><%= product.content %></td>
-    <td><%= product.price %></td>
-    <td><%= product.status %></td>
-    <td><%= product.RentablePeriod %></td>
-    </tr>
-    </table>
-</div>
 <div>
      <li>
 	<% product.DataFiles.each do |image| %>
- 		<%= image_tag(image.path) %>
+ 		<%= link_to image_tag(image.path),product %>
 	<% end %>    
     </li>
 </div>
-<br calss="floatstop"> </br>
 <% end %>
 </ul>
