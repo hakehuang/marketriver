@@ -17,6 +17,9 @@
     <%= link_to "Edit my profile info", customers_path %>
      </p>
   <% end %>
+  <% if  request.request_uri != "/" %>
+<%= link_to "back to home page",root_path %>
+  <% end %>
 </div>
 
 <%= yield %>
