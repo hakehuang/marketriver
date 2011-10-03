@@ -5,48 +5,41 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
         <style type="text/css">
 	html,body{height:100%; margin:5; padding:5;}
-	img.normal{height:auto; width auto}
-	#layout_head{float:left; background:#FFFFFF; width:auto; height:auto; margin:1px;}
-	#layout_top{float:left; background:#FFFFFF; width:auto; height:auto; margin:2px;}
+	img.logo{float:left;height:40px; width:auto}
+	img.normal{height:auto; width:auto}
+	#layout_products{float:left; background:#FFFFFF; width:auto; height:auto; margin:2px;}
 	#layout_foot{float:right; background:#FFFFFF; width:85%; height::auto; margin:2px;}
-	#layout_login{float:left; background:#FFFFFF; width:15%;text-align:center;border:solid 1px blue;}
 	#layout_25{float:center; background:#FFFFFF; width:auto;margin:5px;border:solid 5px white;}
 	.floatstop{clear:both;}
         #layout_right{float:right; background:#00FFFF;text-align:left}
-	ul{list-style-type:square}
-	.menu{font-family:verdana,arial,sans-serif; width:400px;position:relative;z-index:100;margin:5px}
-	/* remove the bullets and set the margin and padding to zero for the unordered list */
-	.menu ul{padding:0; margin:0; list-style-type:none; border:0;}
-	/* float the list so that the items are in a line */
-	.menu ul li{float:left; position:relative; margin-right:10px;height:200px;}
-	/* style the links to be 150px wide by 25px high. Set the background color and the font size. */
-	.menu ul li a, .menu ul li a:visited{display:block; text-align:center; text-decoration:none; width:80px; height:25px; color:#aaa; line-height:32px; font-size:24px; text-indent:3px;}
-	/* Get rid of any default table style */
-	table{border-collapse:collapse;margin:0; padding:0;}
-	/* make the dropdown ul invisible */
-	.menu ul li ul{display:none; text-align:left; position:absolute; top:25px; left:-20px; text-align:left;z-index:100; padding:0 30px 20px 20px; 20px 100% no-repeat;}
-	/* set the foreground color of the main menu li on hover and the border to trigger IE */
-	.menu ul li:hover a, .menu ul li a:hover{color:#fff; border:0;}
-	/* make the sub menu ul visible and position it beneath the first list item */
-	.menu ul li:hover ul, .menu ul li a:hover ul{display:block;}
-	/* make the sub menu ul li the full width with padding and border. Add an auto scroll bar */
-	.menu ul li:hover ul li, .menu ul li a:hover ul li{background:#363636; color:#000; width:149px; height:200px;overflow:auto; border-left:1px solid #7a7a7a;}
-	/* hack the widht for ie5.5 */* 
-	html .menu ul li a:hover ul li{width:150px; w\idth:149px;}
-	/* style the background and foreground color of the submenu links */
-	.menu ul li:hover ul li a, .menu ul li a:hover ul li a{float:left; display:block; background:#363636; color:#aaa; width:129px; text-align:left; text-decoration:none; border:0; text-indent:10px;}
-	/* style the background and forground colors of the links on hover */
-	.menu ul li:hover ul li a:hover, .menu ul li a:hover ul li a:hover{text-decoration:none; color:#fff; background:#222;}
-        </style>    
+        li{float:left; margin:10px;float:left; margin:10px;display:inline;}
+        .layout_top li{ float:left; margin:10px;font:12px;display:inline;}
+        .layout_top li a {display:block; padding:8px 50px;background:#3A4953;color:#fff; text-decoration:none;border-right:1px solid #000;text-align:center}
+        .layout_top li a:hover {background:#146C9C;color:#fff;text-decoration:none;border-right:1px solid #000;}
+	</style>    
     </head>    
-    <body>        
-        <div id="layout_head">            
-        <img class="normal" src="images/logo.jpg" />        
+    <body> 
+<a id="setHomePage" style="behavior:url(#default#homepage);" onclick="SetHome(this)" href="javascript:void(0);">Top me</a>       
+        <div>
+	<img class="logo" src="images/logo.jpg" />        
+        <ul class="layout_top">
+	<li>
+        <%= link_to "all products", products_path  %>
+         </li>
+         <li>
+        <%= link_to "register", new_user_registration_path %>
+         </li>
+         <li>
+        <%= link_to "login", user_session_path %>
+         </li>
+	<li>
+        <%= link_to "blog", root_path %>
+         </li>
+         <li>
+        <%= link_to "help", root_path  %>
+         </li>
+        </ul>
         </div>
-        <img class="normal"  src="images/GBEE.home_16.jpg" />        
-        <img class="normal"  src="images/GBEE.home_17.jpg" />        
-        <img class="normal"  src="images/GBEE.home_18.jpg" />        
-        <img class="normal"  src="images/GBEE.home_19.jpg" />        
 	<div id="layout_25">            
             <p>                
                 <form name="serc" method="get" action="http://www.google.com">                    
@@ -56,33 +49,12 @@
                 </form>            
             </p>        
         </div>  
-        <%= link_to "all products", products_path , :class => "normal" %>      
-        <p class="floatstop">         
-        </p>        
-        <div id="layout_login">            
-            <p>                
-                <img class="normal"  src="images/GBEE.home_28.jpg"  />            
-            </p>            
-            <p>                
-                <input name="u" type="text">            
-            </p>            
-            <p>                
-                <input name="p"  type="text">            
-            </p>            
-            <p>                
-                <a href="/users/sign_in" > <img class="normal"  src="images/GBEE.home_37.jpg"/></a>                
-                <a herf="nogo" ><img class="normal"  src="images/GBEE.home_39.jpg"  /> </a>
-            </p>            
-            <p>                
-                <a href="/users/sign_up"><img class="normal"  src="images/GBEE.home_42.jpg" /></a>            
-            </p>            
-            <p>                 
-                <a href="/users/password/new""><img class="normal"  src="images/GBEE.home_45.jpg" /></a>            
-            </p>        
-        </div>        
+        <p class="floatstop"></p>
+         <div id="layout_products">        
          <p>
 		<%= render :template => 'products/index' %>
          </p>
+         </div>
         <p class="floatstop">         
         </p>        
         	<img class="normal"  src="images/GBEE.home_52.jpg" />
