@@ -5,18 +5,26 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
         <style type="text/css">
 	html,body{height:100%; margin:5; padding:5;}
-	img.logo{float:left;height:40px; width:auto}
+	img.logo{float:left;height:80px; width:auto}
 	img.normal{height:auto; width:auto}
 	#layout_products{float:left; background:#FFFFFF; width:auto; height:auto; margin:2px;}
 	#layout_foot{float:right; background:#FFFFFF; width:85%; height::auto; margin:2px;}
-	#layout_25{float:right; background:#FFFFFF; width:auto;margin:5px;border:solid 5px white;}
+	#layout_25{background:#FFFFFF; width:auto;margin:5px;border:solid 5px white;}
 	.floatstop{clear:both;}
         #layout_right{float:right; background:#00FFFF;text-align:left}
-        li{float:left; margin:10px;float:left; margin:10px;display:inline;}
+        #products{float:left; margin:10px;margin:10px;display:inline;}
         .layout_top li{ float:left; margin:10px;font:12px;display:inline;}
         .layout_top li a {display:block; padding:8px 50px;background:#3A4953;color:#fff; text-decoration:none;border-right:1px solid #000;text-align:center}
         .layout_top li a:hover {background:#146C9C;color:#fff;text-decoration:none;border-right:1px solid #000;}
-	.menu1 ul li{float:left; display:block;}
+        #search {
+              position:relative;
+	      left: 30%;
+	      background: #FFFFFF;
+	      padding:2px;
+	      font-family:arial;
+              width:100%;
+	}
+        #layout_menu {float:left;}
 	</style>
     <script type="text/javascript">
         $(function() {
@@ -46,6 +54,11 @@
 	<li>
         <%= link_to "all products", products_path  %>
          </li>
+       <% if user_signed_in? %>
+	<li>
+        <%= link_to "share goods", new_product_path  %>
+         </li>
+       <% end  %>
          <li>
         <%= link_to "register", new_user_registration_path %>
          </li>
@@ -60,32 +73,39 @@
          </li>
         </ul>
         </div>
-	<div id="layout_25">            
-            <p>                
+        <p class="floatstop"></p>
+	<div id="search">            
                 <form name="serc" method="get" action="http://www.google.com">                    
                     <input name="searchfrom" value="headbar" type="hidden">                    
                     <input name="k" onKeyDown="if(event.keyCode == 13) document.serc.submit();" width=10 type="text">                    
                     <input type="button" onClick="document.serc.submit();value="Submit" value="search">                
                 </form>            
-            </p>        
-        </div>  
-        <p class="floatstop"></p>
+        </div> 
+        <div id="layout_menu"> 
 	<div id="menu1" class="menuTree"> 
 	<ul> 
-	<li class="parent"><a href="#" mce_href="#">Animals</a> 
+	<li class="parent"><a href="#" mce_href="#">Philosophy</a> 
+	<ul>
+	<li class="child"><a href="dog" mce_href="dog">dog</a></li> 
+	<li class="child"><a href="cat" mce_href="cat">cat</a></li> 
+	<li class="child"><a href="duck" mce_href="duck">duck</a></li> 
+	</ul> 
+        </li> 
+	<li class="parent"><a href="#" mce_href="#">Philosophy</a> 
 	<ul>
 	<li class="child"><a href="dog" mce_href="dog" >dog</a></li> 
 	<li class="child"><a href="cat" mce_href="cat">cat</a></li> 
 	<li class="child"><a href="duck" mce_href="duck">duck</a></li> 
 	</ul> 
         </li> 
-	</ul> 
-	</div>
-         <div id="layout_products">        
+	</ul>
+        </div>
+        </div>
+	<div id="layout_products">        
          <p>
-		<%= render :template => 'products/index' %>
+	<%= render :template => 'products/index' %>
          </p>
-         </div>
+        </div>
         <p class="floatstop"></p>
         <div>        
         <img class="normal"  src="images/GBEE.home_52.jpg" />

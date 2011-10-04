@@ -13,13 +13,9 @@
 <% if  request.request_uri != "/" %>
 <div id="user_nav">
   <% if user_signed_in? %>
-    <p>
     Welcome <%= current_user.email %>. Not you?
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-    </p>
-    <p>
     <%= link_to "Edit my profile info", customers_path %>
-     </p>
   <% end %>
 <%= link_to "back to home page",root_path %>
 </div>

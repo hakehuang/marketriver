@@ -1,10 +1,13 @@
 <!--<h1><%= link_to "products", products_path %></h1>-->
 <ul>
 <% @products.each do |product| %>
-<div>
-     <li>
+<div id="products">
+     <li id="products">
 	<% product.DataFiles.each do |image| %>
- 		<%= link_to image_tag(image.path),product %>
+ 		<li><%= link_to image_tag(image.path),product %></li>
+		<li><%= product.name %></li> 
+                <li>$<%= product.price %></li>
+               <% break %>
 	<% end %>    
     </li>
 </div>
