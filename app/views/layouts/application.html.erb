@@ -10,7 +10,6 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<% if  request.request_uri != "/" %>
 <div id="user_nav">
   <% if user_signed_in? %>
     Welcome <%= current_user.email %>. Not you?
@@ -19,7 +18,6 @@
   <% end %>
 <%= link_to "back to home page",root_path %>
 </div>
- <% end %>
 <%= yield %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
