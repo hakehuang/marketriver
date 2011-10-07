@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
   def index
      @products = Product.all(:order => "RAND()", :limit => 5)
+   
+    #only keep code here
+    #current_user.update_attribute :admin, true
 
     respond_to do |format|
       format.html # index.html.erb

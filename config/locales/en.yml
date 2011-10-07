@@ -2,4 +2,17 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  blog: "Blog"
+  browser_products: "Browser Products"
+  edit_my_profile_info: "Edit My Profile Info"
   hello: "Hello world"
+  help: "Help"
+  login: "Login"
+  logout: "Logout"
+  my_transactions: "My Transactions"
+  search: "Search"
+  share_my_goods: "Share My Goods"
+  register: "Register"
+  welcome: "Welcome"
+  
+

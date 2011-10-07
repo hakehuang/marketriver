@@ -52,27 +52,27 @@
 	<img class="logo" src="images/logo.jpg" />        
         <ul class="layout_top">
 	<li>
-        <%= link_to "all products", products_path  %>
+        <%= link_to t(:browse_products), products_path  %>
          </li>
        <% if user_signed_in? %>
 	<li>
-        <%= link_to "share goods", new_product_path  %>
+        <%= link_to t(:share_my_goods), new_product_path  %>
          </li>
 	<li>
-        <%= link_to "my transactions", transactions_path  %>
+        <%= link_to t(:my_transactions), transactions_path  %>
          </li>
        <% end  %>
          <li>
-        <%= link_to "register", new_user_registration_path %>
+        <%= link_to t(:register), new_user_registration_path %>
          </li>
          <li>
-        <%= link_to "login", user_session_path %>
+        <%= link_to t(:login), user_session_path %>
          </li>
 	<li>
-        <%= link_to "blog", root_path %>
+        <%= link_to t(:blog), root_path %>
          </li>
          <li>
-        <%= link_to "help", root_path  %>
+        <%= link_to t(:help), root_path  %>
          </li>
         </ul>
         </div>

@@ -1,5 +1,7 @@
 Phoenix::Application.routes.draw do
 
+  devise_for :admins
+
   resources :transactions
 
 resources :products do
@@ -9,7 +11,8 @@ end
   resources :customers
 
   devise_for :users
-
+  devise_for :admin
+ 
   get "home/index"
 
   match "/upload" => "upload#index"
