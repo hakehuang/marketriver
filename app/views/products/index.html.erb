@@ -7,7 +7,9 @@
  		<li><%= link_to image_tag(image.path),product %></li>
 		<li><%= product.name %></li> 
                 <li>$<%= product.price %></li>
-               <% break %>
+               <% if  request.request_uri == "/" %>
+                <% break %>
+               <% end %>
 	<% end %>    
     </li>
 </div>
