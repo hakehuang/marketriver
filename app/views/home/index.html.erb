@@ -81,7 +81,8 @@
                 <form name="serc" method="get" action="http://www.google.com">                    
                     <input name="searchfrom" value="headbar" type="hidden">                    
                     <input name="k" onKeyDown="if(event.keyCode == 13) document.serc.submit();" width=10 type="text">                    
-                    <input type="button" onClick="document.serc.submit();value="Submit" value="search">                
+                    <!-- input type="button" onClick="document.serc.submit();value="Submit" value="search"-->
+                    <%= submit_tag t(:search) %>                
                 </form>            
         </div> 
         <div id="layout_menu"> 
