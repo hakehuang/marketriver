@@ -10,8 +10,9 @@ end
 
   resources :customers
 
-  devise_for :users
-  devise_for :admin
+  devise_for :users do
+  get 'logout' => 'devise/sessions#destroy'
+  end
  
   get "home/index"
 

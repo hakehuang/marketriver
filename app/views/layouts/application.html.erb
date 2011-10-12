@@ -13,7 +13,7 @@
 <div id="user_nav">
   <% if user_signed_in? %>
     Welcome <%= current_user.email %>. Not you?
-    <%= link_to t(:logout), destroy_user_session_path, :method => :delete %>
+    <%= link_to t(:logout), logout_path, :method => :delete %>
     <%= link_to t(:edit_my_profile_info), customers_path %>
   <% end %>
 <%= link_to "back to home page",root_path %>
