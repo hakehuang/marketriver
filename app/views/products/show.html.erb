@@ -30,6 +30,22 @@
   <b>Rentableperiod:</b>
   <%= @product.RentablePeriod %>
 </p>
+
+<p>
+  <b>Product Catalog:</b>
+  <%= @product.cata_level_1  %>
+</p>
+
+<p>
+  <b>Product Type:</b>
+  <%= @product.cata_level_2  %>
+</p>
+
+<p>
+  <b>Share Mode:</b>
+  <%= @product.sharemode %>
+</p>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
 <%= form_tag (:action => "borrow") do %>
