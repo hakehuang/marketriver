@@ -1,6 +1,6 @@
 Phoenix::Application.routes.draw do
 
-  devise_for :admins
+#  devise_for :admins
 
   resources :transactions
 
@@ -11,7 +11,7 @@ end
   resources :customers
 
   devise_for :users do
-  get 'logout' => 'devise/sessions#destroy'
+  match 'logout' => 'devise/sessions#destroy'
   end
  
   get "home/index"

@@ -38,7 +38,10 @@
   </div>
   <div class="field">
     <%= f.label :user_id %><br />
-    <%= f.text_field :user_id, :disabled => "disabled", :class => 'textbg' %>
+    <!---
+     <%= f.text_field :user_id, :disabled => "disabled", :class => 'textbg' %>
+    -->
+<%= hidden_field 'user','id', :value => params[:user_id] %>
   </div>
   <div class="actions">
     <%= f.submit %>
