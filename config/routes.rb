@@ -1,5 +1,9 @@
 Phoenix::Application.routes.draw do
 
+  resources :product_types do
+    resources :product_cataloges
+  end
+
 #  devise_for :admins
 
   resources :transactions

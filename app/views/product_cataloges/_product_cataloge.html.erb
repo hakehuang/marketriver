@@ -1,0 +1,10 @@
+  <p>
+    <b>Cataloge Name:</b>
+    <%= product_cataloge.name %>
+  </p>
+
+<p>
+  <%= link_to 'Destroy Cataloge', [product_cataloge.product_type, product_cataloge],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+</p>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @product_type.name %>
+</p>
+
+<h2>Cataloges:</h2>
+<%= render @product_type.product_cataloges %>
+
+<h2>Add a cataloge:</h2>
+<%= form_for([@product_type, @product_type.product_cataloges.build]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<br />
+
+<%= link_to 'Edit', edit_product_type_path(@product_type) %> |
+<%= link_to 'Back', product_types_path %>
