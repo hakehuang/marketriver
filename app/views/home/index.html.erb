@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
         <style type="text/css">
 	html,body{height:100%; margin:5; padding:5;}
-	img.logo{float:left;height:80px; width:auto}
+	.logo{float:left;height:80px; width:auto}
 	img.normal{height:auto; width:auto}
 	#layout_products{float:left; background:#FFFFFF; width:auto; height:auto; margin:2px;}
 	#layout_foot{float:right; background:#FFFFFF; width:85%; height::auto; margin:2px;}
@@ -47,9 +47,8 @@
     </script>
 </head>    
     <body> 
-<a id="setHomePage" style="behavior:url(#default#homepage);" onclick="SetHome(this)" href="javascript:void(0);">Top me</a>       
         <div>
-	<img class="logo" src="images/logo.jpg" />        
+        <%= link_to image_tag("logo.jpg", :class => "logo"), root_path %>
         <ul class="layout_top">
 	<li>
         <%= link_to t(:browse_products), products_path  %>
@@ -73,6 +72,9 @@
          </li>
          <li>
         <%= link_to t(:help), root_path  %>
+         </li>
+         <li>
+<a id="setHomePage" style="behavior:url(#default#homepage);" onclick="SetHome(this)" href="javascript:void(0);"><%= t(:topme) %></a>       
          </li>
         </ul>
         </div>

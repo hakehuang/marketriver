@@ -11,7 +11,7 @@
 <h2>Add a cataloge:</h2>
 <%= form_for([@product_type, @product_type.product_cataloges.build]) do |f| %>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "name" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="actions">
