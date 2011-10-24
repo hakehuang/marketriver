@@ -1,13 +1,11 @@
-# US English translations for Ruby on Rails
-#
-# Use this as the base for the locale file of your language.
+# GB English translations for Ruby on Rails
 
-"en-US":
+"en-GB":
   date:
     formats:
-      default: "%Y-%m-%d"
-      short: "%b %d"
-      long: "%B %d, %Y"
+      default: "%d-%m-%Y"
+      short: "%d %b"
+      long: "%d %B, %Y"
 
     day_names:
       - Sunday
@@ -55,15 +53,15 @@
       - Nov
       - Dec
     order:
-      - :year
-      - :month
       - :day
+      - :month
+      - :year
 
   time:
     formats:
       default: "%a, %d %b %Y %H:%M:%S %z"
       short: "%d %b %H:%M"
-      long: "%B %d, %Y %H:%M"
+      long: "%d %B, %Y %H:%M"
     am: "am"
     pm: "pm"
 
@@ -87,7 +85,7 @@
     currency:
       format:
         format: "%u%n"
-        unit: "$"
+        unit: "£"
         separator: "."
         delimiter: ","
         precision: 2
@@ -226,115 +224,3 @@
 
       full_messages:
         format: "%{attribute} %{message}"
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
-  blog: "Blog"
-  browser_products: "Browser Products"
-  edit_my_profile_info: "Edit My Profile Info"
-  hello: "Hello world"
-  help: "Help"
-  login: "Login"
-  logout: "Logout"
-  my_transactions: "My Transactions"
-  search: "Search"
-  share_my_goods: "Share My Goods"
-  register: "Register"
-  welcome: "Welcome"
-  topme: "TopMe"  
-  product_types:
-    books:
-      books: "Books"
-      textbook: "Text book"
-      toolbook: "Tool book"
-      computerbook: "Computer Book"
-      language: "Language"
-      finance: "Finance"
-      enterprise: "Enterprise"
-      literature: "Literature"
-      baby: "Baby"
-      Sports: "Sports"
-      nature: "Nature"
-      health: "Health"
-      others: "others"
-    computers:
-      computers: "Computers"
-      tablet: "Tablet"
-      notebook: "Notebook"
-      pc: "PC"
-      peripheral: "Peripheral"
-      component: "Component"
-      software: "Software"
-      navigation: "Navigation"
-      dictionary:  "Dictionary"
-      reparing: "Reparing"
-      printer: "Printer"
-      scaner: "Scaner"
-      allinone: "All in one"
-      others: "others"
-    life:
-      life: "Life"
-      handtools: "Hand tools"
-      electrictools: "Electric Tools"
-      pats: "Pats"
-      clean: "Clean"
-      gardening: "Gardening"
-      others: "others"
-    electrics:
-      electrics: "Electrics"
-      tv: "TV"
-      hifi: "HIFI"
-      wire: "Wire"
-      multimedia: "Multi-media"
-      others: "others"
-    camera:
-      camera: "Camera"
-      consumer: "Consumer"
-      slrlike: "SLR like"
-      slr: "SLR"
-      consumerdv: "Consumer DV"
-      professionaldv: "Professional DV"
-      memorydisk: "Memory Disk"
-      others: "others"
-    cellphone:
-      cellphone: "Cell Phone"
-      cell: "cell"
-      smartphone: "Smart Phone"
-      fax:  "Fax"
-      interphone: "Interphone"
-      digital:  "Digital"
-      others: "others"
-    music:
-      music: "Music"
-      bd: "BD"
-      dvd: "DVD"
-      cd: "CD"
-      vcd: "VCD"
-      others: "others"
-    sports:
-      sports: "Sports"
-      health: "Healthing equipment"
-      protector: "Protector"
-      clothing: "Clothing"
-      others: "others"
-    entertainment:
-      entertainment: "Entertainment"
-      hotel: "Hotel"
-      residential: "Residential"
-      gammer: "Gammer"
-      others: "others"
-    vehicle:
-      vehicle: "Vehicle"
-      auto: "Auto"
-      moto: "Motocycle"
-      autorelated: "Auto related"
-      moto: "Moto releated"
-      others: "others"
-    others:
-      others: "others"
-    types: "Product Types"
-    cataloges: "Product Cataloges"
-  
-      
-           
-

@@ -36,11 +36,19 @@
     <%= f.label :RentablePeriod %><br />
     <%= f.date_select :RentablePeriod %>
   </div>
+   <%= javascript_include_tag "prototype" %>
+  <div class="field">
+    <%= f.label t("types") %><br />
+  <%= collection_select(nil, :cata_level_1,  @catalog1_list,  :id, :tname,
+                      {:prompt   => "Select" + t("types")},
+                      {:onchange => "#{remote_function(:url  => {:action => "update_cata_level_2"},
+                                                       :with => "'cata_level_1='+value")}"}) %>
+<br/>
+    <%= f.label t("cataloges") %><br />
+<!-- collection_select(nil, :cata_level_2, @cataloge2_list, :id, :name,{:prompt   => "Select" + "cataloge"}) -->
+  </div>
   <div class="field">
     <%= f.label :user_id %><br />
-    <!---
-     <%= f.text_field :user_id, :disabled => "disabled", :class => 'textbg' %>
-    -->
 <%= hidden_field 'user','id', :value => params[:user_id] %>
   </div>
   <div class="actions">

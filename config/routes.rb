@@ -24,7 +24,7 @@ end
   match "/upload/uploadFile" => "upload#uploadFile"
   match "/delete/datafile" => "DataFile#destroy"
   match "/products/borrow" => "products#borrow"
-
+  match "/products/update_cata_level_2" => "products#update_cata_level_2"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

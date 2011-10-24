@@ -57,13 +57,31 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.user_id = current_user.id
+    
+    @catalog1_list = ProductType.all
+    @catalog2_list = ProductCataloge.all 
 
+ #  @catalog1s = ProductType.all
+ #  @catalog1_list = []
+ #  for @item in @catalog1s
+ #      @name = @item.name.to_s
+ #      @catalog1_list += [t(@name + "." + @name)]
+ #  end
+   
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @product }
     end
   end
 
+  def update_cata_leve_2
+    @catalog1_list = ProductType.find(params[:cata_level_1])    
+    @catalog2_list = @catalog1_list.product_cataloges
+ 
+    render :update do |page|
+      page.replace_html 'cataloge2_list', :partial => 'cataloge2_list', :object => cataloge2_list
+    end 
+  end
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
