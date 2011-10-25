@@ -11,6 +11,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  def say_when
+     render "<p>The time is <b>" + DateTime.now.to_s + "</b></p>"
+  end
+
   def borrow
     @product = Product.find(params[:product]["id"])
     @transact = 0
@@ -74,12 +78,11 @@ class ProductsController < ApplicationController
     end
   end
 
-  def update_cata_leve_2
+  def update_cata_level_2
     @catalog1_list = ProductType.find(params[:cata_level_1])    
     @catalog2_list = @catalog1_list.product_cataloges
- 
     render :update do |page|
-      page.replace_html 'cataloge2_list', :partial => 'cataloge2_list', :object => cataloge2_list
+      page.replace_html 'cata_level_2', :partial => 'cata_level_2', :object => @catalog2_list
     end 
   end
   # GET /products/1/edit
