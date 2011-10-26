@@ -50,6 +50,14 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
 
+    if ( @product.cata_level_1  )
+      @product_type = ProductType.find(@product.cata_level_1)
+      @cata_level1_name = @product_type.name.to_s
+      @cata_level2_name = @product_type.product_cataloges.find(@product.cata_level_2).name.to_s
+    else
+      @cata_level1_name = "Undefined"
+      @cata_level2_name = "Undefined"
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @product }
@@ -81,6 +89,7 @@ class ProductsController < ApplicationController
   def update_cata_level_2
     @catalog1_list = ProductType.find(params[:cata_level_1])    
     @catalog2_list = @catalog1_list.product_cataloges
+    @form = params[:form]
     render :update do |page|
       page.replace_html 'cata_level_2', :partial => 'cata_level_2', :object => @catalog2_list
     end 
@@ -88,6 +97,12 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    @catalog1_list = ProductType.all
+    @catalog2_list = ProductCataloge.all
+ 
+    @current_cata1 = @product.cata_level_1
+    @current_cata2 = @product.cata_level_2
+     
     if ( @product.user_id != current_user.id)
        redirect_to products_path,:notice => 'You do not own this products'
     end

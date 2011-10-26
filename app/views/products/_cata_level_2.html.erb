@@ -1,1 +1,5 @@
-<%= collection_select(nil, :cata_level_2, @catalog2_list, :id, :tname,{:prompt   => "Select" + "cataloge"} ) %> <br/>
+<% if @form %>
+<%= form.collection_select(:cata_level_2, @catalog2_list, :id, :tname,{:prompt   => @current_cata2 ? @current_cata2 :"Select" + "cataloge"} ) %> <br/>
+<% else  %>
+<%= collection_select(:product,:cata_level_2, @catalog2_list, :id, :tname,{:prompt   => @current_cata2 ? @current_cata2 :"Select" + "cataloge"} ) %> <br/>
+<% end %>

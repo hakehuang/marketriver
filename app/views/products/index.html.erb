@@ -5,12 +5,12 @@
      <li id="products">
 	<% product.DataFiles.each do |image| %>
  		<li><%= link_to image_tag(image.path),product %></li>
-		<li><%= product.name %></li> 
-                <li>$<%= product.price %></li>
                <% if  request.request_uri == "/" %>
                 <% break %>
                <% end %>
 	<% end %>    
+	<li><%= link_to product.name, product %></li> 
+        <li>$<%= product.price %></li>
     </li>
 </div>
 <% end %>
