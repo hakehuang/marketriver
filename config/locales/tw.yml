@@ -328,4 +328,5 @@ tw:
   others:
     others: "其它"
   types: "Product Types"
-  cataloges: "Product Cataloges" 
+  cataloges: "Product Cataloges"
+  search: "Search ..." 

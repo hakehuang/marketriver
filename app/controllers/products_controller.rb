@@ -10,6 +10,10 @@ class ProductsController < ApplicationController
       format.xml  { render :xml => @products }
     end
   end
+  
+  def find_title
+    @products = Product.where("title LIKE :title", :title => params[:title][:name] + "%").all
+  end
 
   def search
     @products = Product.where("cata_level_1 = :type AND cata_level_2 = :cata",{ :type => params[:pt] ,:cata =>  params[:pc] }).all

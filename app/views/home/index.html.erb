@@ -85,7 +85,11 @@
                     <input name="k" onKeyDown="if(event.keyCode == 13) document.serc.submit();" width=10 type="text">                    
                     <!-- input type="button" onClick="document.serc.submit();value="Submit" value="search"-->
                     <%= submit_tag t(:search) %>                
-                </form>            
+                </form>
+               <%= form_tag('/products/find_title') do %>
+                 <%= text_field 'title','name' , :size => 20 %>
+                 <%= submit_tag t(:search) %>
+                <% end  %> 
         </div> 
         <div id="layout_menu"> 
 	<div id="menu1" class="menuTree">
