@@ -7,7 +7,7 @@
 	html,body{height:100%; margin:5; padding:5;}
 	.logo{float:left;height:80px; width:auto}
 	img.normal{height:auto; width:auto}
-	#layout_products{float:left; background:#FFFFFF; width:auto; height:auto; margin:2px;}
+	#layout_products{float:left; background:#FFFFFF; width:auto; height:auto; margin:4px;}
 	#layout_foot{float:right; background:#FFFFFF; width:85%; height::auto; margin:2px;}
 	#layout_25{background:#FFFFFF; width:auto;margin:5px;border:solid 5px white;}
 	.floatstop{clear:both;}
@@ -88,23 +88,18 @@
                 </form>            
         </div> 
         <div id="layout_menu"> 
-	<div id="menu1" class="menuTree"> 
-	<ul> 
-	<li class="parent"><a href="#" mce_href="#">Philosophy</a> 
-	<ul>
-	<li class="child"><a href="dog" mce_href="dog">dog</a></li> 
-	<li class="child"><a href="cat" mce_href="cat">cat</a></li> 
-	<li class="child"><a href="duck" mce_href="duck">duck</a></li> 
-	</ul> 
-        </li> 
-	<li class="parent"><a href="#" mce_href="#">Philosophy</a> 
-	<ul>
-	<li class="child"><a href="dog" mce_href="dog" >dog</a></li> 
-	<li class="child"><a href="cat" mce_href="cat">cat</a></li> 
-	<li class="child"><a href="duck" mce_href="duck">duck</a></li> 
-	</ul> 
-        </li> 
-	</ul>
+	<div id="menu1" class="menuTree">
+        <% for @pt in  @product_types %> 
+	 <ul> 
+	  <li class="parent"><a href="#" mce_href=""><%= @pt.tname %></a>
+	   <ul>
+           <% for @pc in @pt.product_cataloges %>
+	    <li class="child"><%= link_to @pc.tname, products_search_path(:pt => @pt.id, :pc => @pc.id) %>
+	   <% end %>
+           </ul> 
+          </li> 
+	 </ul> 
+        <% end %>
         </div>
         </div>
 	<div id="layout_products">        

@@ -1,0 +1,5 @@
+$("#product_cata_level_2").find('option').remove();
+<% for @f in @catalog2_list %>
+$("#product_cata_level_2").append('<option value="1"><%= @f.tname %></option>')
+<% end  %>
+

@@ -1,32 +1,34 @@
 Phoenix::Application.routes.draw do
 
-  resources :product_types do
+ resources :product_types do
     resources :product_cataloges
   end
 
 #  devise_for :admins
- 
+
   resources :transactions
 
 
+  match "/products/borrow" => "products#borrow"
   match "/products/update_cata_level_2" => "products#update_cata_level_2"
-resources :products do
+  match "/products/search" => "products#search"
+  resources :products do
   resources :DataFiles
-end
+  end
 
   resources :customers
 
   devise_for :users do
   match 'logout' => 'devise/sessions#destroy'
   end
- 
+
   get "home/index"
 
   match "/upload" => "upload#index"
   match "/upload/uploadFile" => "upload#uploadFile"
   match "/delete/datafile" => "DataFile#destroy"
-  match "/products/borrow" => "products#borrow"
-  
+
+   root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -76,7 +78,7 @@ end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => "home#index"
+  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 

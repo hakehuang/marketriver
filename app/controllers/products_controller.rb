@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show, :search]
   # GET /products
   # GET /products.xml
   def index
@@ -11,8 +11,9 @@ class ProductsController < ApplicationController
     end
   end
 
-  def say_when
-     render "<p>The time is <b>" + DateTime.now.to_s + "</b></p>"
+  def search
+    @products = Product.where("cata_level_1 = :type AND cata_level_2 = :cata",{ :type => params[:pt] ,:cata =>  params[:pc] }).all
+    render 'products/index'
   end
 
   def borrow
@@ -89,10 +90,7 @@ class ProductsController < ApplicationController
   def update_cata_level_2
     @catalog1_list = ProductType.find(params[:cata_level_1])    
     @catalog2_list = @catalog1_list.product_cataloges
-    @form = params[:form]
-    render :update do |page|
-      page.replace_html 'cata_level_2', :partial => 'cata_level_2', :object => @catalog2_list
-    end 
+    
   end
   # GET /products/1/edit
   def edit

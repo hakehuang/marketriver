@@ -1,0 +1,8 @@
+.textbg{
+background-color:gray;
+border:none 
+} 
+.float_li{ float:right; background:#FFFFFF}
+.float_right{ float:right; background:#FFFFFF}
+.float_left{ float:left; background:#FFFFFF}
+.floatstop{clear:both;}#layout_right{float:right; background:#00FFFF;text-align:left}
