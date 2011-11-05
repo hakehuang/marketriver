@@ -335,7 +335,6 @@
     types: "Product Types"
     cataloges: "Product Cataloges"
     search: "Search ..."
-  
-      
-           
-
+    forfree: "For Free"
+    forsale: "For Sale"
+    forrent: "For Rent"

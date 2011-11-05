@@ -329,4 +329,7 @@ tw:
     others: "其它"
   types: "Product Types"
   cataloges: "Product Cataloges"
-  search: "Search ..." 
+  search: "Search ..."
+  forsale: "For Sale"
+  forfree: "For Free"
+  forrent: "For Rent" 

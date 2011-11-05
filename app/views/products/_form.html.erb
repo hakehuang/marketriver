@@ -36,6 +36,13 @@
     <%= f.label :RentablePeriod %><br />
     <%= f.date_select :RentablePeriod %>
   </div>
+
+   <div class="field">
+     <%= f.label :sharemode  %><br />
+     <%= f.select :sharemode, @sharemode %>
+     <!--%= f.select_tag options_from_collection_for_select(@sharemode, 'id', 'name') %-->
+   </div>
+   
   <div class="field">
     <%= f.label t("types") %><br />
   <%= f.collection_select(:cata_level_1,  @catalog1_list,  :id, :tname,

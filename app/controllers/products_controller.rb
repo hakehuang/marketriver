@@ -77,7 +77,9 @@ class ProductsController < ApplicationController
     
     @catalog1_list = ProductType.all
     @catalog2_list = ProductCataloge.all 
-
+    
+    @sharemode = [ [t(:forfree),1],[t(:forrent), 2],[t(:forsale), 3] ]
+     
  #  @catalog1s = ProductType.all
  #  @catalog1_list = []
  #  for @item in @catalog1s
@@ -105,6 +107,7 @@ class ProductsController < ApplicationController
     @current_cata1 = @product.cata_level_1
     @current_cata2 = @product.cata_level_2
      
+    @sharemode = [ [t(:forfree),1],[t(:forrent), 2],[t(:forsale), 3] ]
     if ( @product.user_id != current_user.id)
        redirect_to products_path,:notice => 'You do not own this products'
     end
