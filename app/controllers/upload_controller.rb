@@ -15,7 +15,7 @@ class UploadController < ApplicationController
       file = params[:upload][num]
       if !file.original_filename.empty?
         @filename=getFileName(file.original_filename)
-        @filename=current_user.id.to_s + "_" + Time.now.year.to_s + Time.now.month.to_s + Time.now.mday.to_s + '_' +  @filename
+        @filename=current_user.id.to_s + "_" + Time.now.year.to_s + Time.now.month.to_s + Time.now.mday.to_s + rand(1000).to_s + '_' +  @filename
         File.open(Rails.root + "app/assets/images/#{@filename}", "wb") do |f|
         f.write(file.read)
       end

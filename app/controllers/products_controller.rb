@@ -58,7 +58,11 @@ class ProductsController < ApplicationController
     if ( @product.cata_level_1  )
       @product_type = ProductType.find(@product.cata_level_1)
       @cata_level1_name = @product_type.name.to_s
+      if ( @product.cata_level_2  )
       @cata_level2_name = @product_type.product_cataloges.find(@product.cata_level_2).name.to_s
+      else
+      @cata_level2_name = "Undefined"
+      end
     else
       @cata_level1_name = "Undefined"
       @cata_level2_name = "Undefined"
