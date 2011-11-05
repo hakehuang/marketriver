@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   end
   
   def find_title
-    @products = Product.where("title LIKE :title", :title => params[:title][:name] + "%").all
+    @products = Product.where("title LIKE :title", :title => "%" + params[:title][:name] + "%").all
   end
 
   def search

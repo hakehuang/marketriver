@@ -16,7 +16,7 @@ class UploadController < ApplicationController
       if !file.original_filename.empty?
         @filename=getFileName(file.original_filename)
         @filename=current_user.id.to_s + "_" + Time.now.year.to_s + Time.now.month.to_s + Time.now.mday.to_s + '_' +  @filename
-        File.open("#{RAILS_ROOT}/public/data/#{@filename}", "wb") do |f|
+        File.open(Rails.root + "app/assets/images/#{@filename}", "wb") do |f|
         f.write(file.read)
       end
       DataFile.savefile(@filename,current_user.id, params[:product]["id"])
