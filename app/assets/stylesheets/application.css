@@ -5,3 +5,15 @@
  *= require_self
  *= require_tree . 
 */
+
+<style type="text/css">
+img {
+   background-image: url('/images/default.png')
+}
+</style>
+<style type="text/css">
+img {
+   background-image: url('/images/default.png')
+}
+</style>
+

@@ -339,3 +339,6 @@
     forsale: "For Sale"
     forrent: "For Rent"
     nextstep: "Next Step"
+    available: "Available"
+    lent: "Lent"
+    soldout: "Sold out"

@@ -22,30 +22,30 @@ class ProductsController < ApplicationController
 
   def borrow
     @product = Product.find(params[:product]["id"])
-    @transact = 0
+    @transact = 1
     
     if (current_user.id != @product.user.id )
 	@render = User.find(@product.user_id)
         @borrower = User.find(current_user.id)
 
 	for @customer in @borrower.customers
-		if (@customer.credit > 2)
-		@customer.credit = @customer.credit - 2
+		if (@customer.credits > 2)
+		@customer.credits = @customer.credits - 2
                 @transact = 1
 		@customer.save
 		end  
         end
 	if ( @transact == 1)
 	 for @customer in @render.customers
-		@customer.credit = @customer.credit + 2  
+		@customer.credits = @customer.credits + 2  
 		@customer.save
          end
-        @product.status = "Lended"
         @product.save
-        Transaction.logtransaction(current_user.id,@product.user.id,product.id, 1)
+        Transaction.logtransaction(current_user.id,@product.id, 1)
         	redirect_to products_path,:notice => 'you have borrow this products'
+        else
+		redirect_to products_path,:notice => 'you can not borrow this product'
         end
-        redirect_to products_path,:notice => 'you can not borrow this product'
     else
        redirect_to products_path,:notice => 'it is your own products'
     end
@@ -58,7 +58,12 @@ class ProductsController < ApplicationController
     end
     
     @product = Product.find(params[:id])
-
+    @status = [ [t(:available),1],[t(:lent), 2],[t(:soldout), 3] ]
+     #code to recover old bug
+    if(@product.status.to_i != 1 && @product.status.to_i != 2 && @product.status.to_i != 3)
+      @product.status = "1"
+    end  
+ 
     if ( @product.cata_level_1 )
       @product_type = ProductType.find(@product.cata_level_1)
       @cata_level1_name = @product_type.name.to_s
@@ -92,6 +97,7 @@ class ProductsController < ApplicationController
     @catalog2_list = ProductCataloge.all 
     
     @sharemode = [ [t(:forfree),1],[t(:forrent), 2],[t(:forsale), 3] ]
+    @status = [ [t(:available),1],[t(:lent), 2],[t(:soldout), 3] ]
      
  #  @catalog1s = ProductType.all
  #  @catalog1_list = []
@@ -121,6 +127,7 @@ class ProductsController < ApplicationController
     @current_cata2 = @product.cata_level_2
      
     @sharemode = [ [t(:forfree),1],[t(:forrent), 2],[t(:forsale), 3] ]
+    @status = [ [t(:available),1],[t(:lent), 2],[t(:soldout), 3] ]
     if ( @product.user_id != current_user.id)
        redirect_to products_path,:notice => 'You do not own this products'
     end
@@ -138,6 +145,7 @@ class ProductsController < ApplicationController
     @current_cata1 = @product.cata_level_1
     @current_cata2 = @product.cata_level_2
     @sharemode = [ [t(:forfree),1],[t(:forrent), 2],[t(:forsale), 3] ]
+    @status = [ [t(:available),1],[t(:lent), 2],[t(:soldout), 3] ]
     respond_to do |format|
       if @product.save
         format.html { redirect_to edit_product_path(@product) , :notice => 'Product was successfully created.' }

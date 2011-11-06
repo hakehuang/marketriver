@@ -5,4 +5,14 @@ border:none
 .float_li{ float:right; background:#FFFFFF}
 .float_right{ float:right; background:#FFFFFF}
 .float_left{ float:left; background:#FFFFFF}
-.floatstop{clear:both;}#layout_right{float:right; background:#00FFFF;text-align:left}
+.float_left_list{
+float:left;
+width:7em;
+text-decoration:none;
+color:black;
+background-color:#FFFFFF;
+padding:0.2em 0.6em;
+border-right:1px solid white;
+}
+.floatstop{clear:both;}
+#layout_right{float:right; background:#00FFFF;text-align:left}

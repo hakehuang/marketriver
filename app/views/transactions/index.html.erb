@@ -6,7 +6,6 @@
     <th>Trans stime</th>
     <th>Trans etime</th>
     <th>Status</th>
-    <th>Product</th>
     <th>User</th>
     <th>Borrow customer</th>
     <th>Lent customer</th>
@@ -18,12 +17,11 @@
 <% @transactions.each do |transaction| %>
   <% if (current_user.id == transaction.product.user.id) || (current_user.id == transaction.user.id)  %>
   <tr>
-    <td><%= transaction.Product %></td>
+    <td><%= transaction.product_id %></td>
     <td><%= transaction.trans_stime %></td>
     <td><%= transaction.trans_etime %></td>
     <td><%= transaction.status %></td>
-    <td><%= transaction.product %></td>
-    <td><%= transaction.user %></td>
+    <td><%= transaction.user_id %></td>
     <td><%= transaction.borrow_customer %></td>
     <td><%= transaction.lent_customer %></td>
     <td><%= link_to 'Show', transaction %></td>

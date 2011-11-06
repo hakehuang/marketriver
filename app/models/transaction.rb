@@ -1,12 +1,13 @@
 class Transaction < ActiveRecord::Base
   belongs_to :product
   belongs_to :user
-  def self.logtransaction(borrower, lenter, product, status)
+  validates_columns :status
+  def self.logtransaction(borrower, product, status)
     @transaction = Transaction.new
-    @transaction.product = product
-    @transaction.user  = borrower
+    @transaction.product_id = product
+    @transaction.user_id  = borrower
     @transaction.trans_stime = Time.now.inspect
-    @e = Enumeration.new
+    @e = Transaction.new
     if (status == 1)
     	@e.status = :borrowing
     else

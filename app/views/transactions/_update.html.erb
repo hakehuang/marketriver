@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :product_id %><br />
-    <%= f.text_field :product_id %>
+    <%= f.text_field :product_id, :disabled => 'disabled'%>
   </div>
   <div class="field">
     <%= f.label :trans_stime %><br />
-    <%= f.date_select :trans_stime %>
+    <%= f.date_select :trans_stime, :disabled => 'disabled'%>
   </div>
   <div class="field">
     <%= f.label :trans_etime %><br />
-    <%= f.text_field :trans_etime %>
+    <%= f.text_field :trans_etime, :disabled => 'disabled'%>
   </div>
   <div class="field">
     <%= f.label :status %><br />
@@ -29,15 +29,15 @@
   </div>
   <div class="field">
     <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.text_field :user_id, :disabled => 'disabled' %>
   </div>
   <div class="field">
     <%= f.label :borrow_customer %><br />
-    <%= f.text_field :borrow_customer %>
+    <%= f.text_field :borrow_customer, :disabled => 'disabled' %>
   </div>
   <div class="field">
     <%= f.label :lent_customer %><br />
-    <%= f.text_field :lent_customer %>
+    <%= f.text_field :lent_customer, :disabled => 'disabled' %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -18,7 +18,7 @@
 
 <p>
   <b>Status:</b>
-  <%= @product.status %>
+  <%= t(@status[@product.status.to_i][0]) %>
 </p>
 
 <p>
@@ -50,13 +50,13 @@
 <%= link_to 'Back', products_path %>
 <%= form_tag (:action => "borrow") do %>
 <%= hidden_field  "product", "id", :value => @product.id %>
-<input type="submit" value="Borrow me" />
+<input type="submit" value="Get me" />
 <% end %>
 </div>
 
 <div>
 <% @product.DataFiles.each do |image| %>
- <%= image_tag(image.path, :size => "64x64") %>
+ <%= image_tag(image.path, :size => "64x64", :alt =>"missing pic" ) %>
 <% end %>
 </div>
 

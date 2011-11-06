@@ -334,3 +334,6 @@ tw:
   forfree: "For Free"
   forrent: "For Rent"
   nextstep: "Next Step"
+  available: "Available"
+  lent:  "Lent"
+  soldout: "soldout"
