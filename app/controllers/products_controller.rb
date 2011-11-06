@@ -132,6 +132,12 @@ class ProductsController < ApplicationController
     @product = Product.new(params[:product])
     @product.user_id = current_user.id
 
+    @catalog1_list = ProductType.all
+    @catalog2_list = ProductCataloge.all
+ 
+    @current_cata1 = @product.cata_level_1
+    @current_cata2 = @product.cata_level_2
+    @sharemode = [ [t(:forfree),1],[t(:forrent), 2],[t(:forsale), 3] ]
     respond_to do |format|
       if @product.save
         format.html { redirect_to edit_product_path(@product) , :notice => 'Product was successfully created.' }
