@@ -4,13 +4,21 @@
 <div id="products">
      <li id="products">
 	<% product.DataFiles.each do |image| %>
- 		<li><%= link_to image_tag(image.path),product %></li>
+        <div>
+ 	<li><%= link_to image_tag(image.path),product %></li>
                <% if  request.fullpath == "/" %>
                 <% break %>
                <% end %>
 	<% end %>    
 	<li><%= link_to product.name, product %></li> 
         <li>$<%= product.price %></li>
+        <% if request.fullpath != "/" %>
+           <% if (current_user.id == product.user.id) || (current_user.admin?)  %>
+    <li><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></li>
+           <% end  %>
+        <% end %>
+       </div>
+       <br />
     </li>
 </div>
 <% end %>

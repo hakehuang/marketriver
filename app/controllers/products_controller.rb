@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
         @product.status = "Lended"
         @product.save
         Transaction.logtransaction(current_user.id,@product.user.id,product.id, 1)
-        redirect_to products_path,:notice => 'you have borrow this products'
+        	redirect_to products_path,:notice => 'you have borrow this products'
         end
         redirect_to products_path,:notice => 'you can not borrow this product'
     else
@@ -53,13 +53,17 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.xml
   def show
+    if params[:id].nil? 
+     redirect_to products_path
+    end
+    
     @product = Product.find(params[:id])
 
-    if ( @product.cata_level_1  )
+    if ( @product.cata_level_1 )
       @product_type = ProductType.find(@product.cata_level_1)
       @cata_level1_name = @product_type.name.to_s
       if ( @product.cata_level_2  )
-      @cata_level2_name = @product_type.product_cataloges.find(@product.cata_level_2).name.to_s
+      	@cata_level2_name = @product_type.product_cataloges.find(@product.cata_level_2).name.to_s
       else
       @cata_level2_name = "Undefined"
       end
@@ -71,6 +75,11 @@ class ProductsController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @product }
     end
+    rescue
+      @cata_level1_name = "Undefined"
+      @cata_level2_name = "Undefined"
+      #flash[:notice] = "Wrong post it"
+      #redirect_to :action => 'index'
   end
 
   # GET /products/new
