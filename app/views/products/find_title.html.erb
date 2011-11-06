@@ -10,7 +10,7 @@
      <li id="products">
 	<% product.DataFiles.each do |image| %>
  		<li><%= link_to image_tag(image.path),product %></li>
-               <% if  request.request_uri == "/" %>
+               <% if  request.fullpath == "/" %>
                 <% break %>
                <% end %>
 	<% end %>    
