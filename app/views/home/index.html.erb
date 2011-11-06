@@ -80,12 +80,11 @@
         </div>
         <p class="floatstop"></p>
 	<div id="search">            
-                <form name="serc" method="get" action="http://www.google.com">                    
+                <!-- form name="serc" method="get" action="http://www.google.com">                    
                     <input name="searchfrom" value="headbar" type="hidden">                    
                     <input name="k" onKeyDown="if(event.keyCode == 13) document.serc.submit();" width=10 type="text">                    
-                    <!-- input type="button" onClick="document.serc.submit();value="Submit" value="search"-->
-                    <%= submit_tag "google search" %>                
-                </form>
+                    < %= submit_tag "google search" % >                
+                </form-->
                <%= form_tag('/products/find_title') do %>
                  <%= text_field 'title','name' , :size => 20 %>
                  <%= submit_tag t(:search) %>
