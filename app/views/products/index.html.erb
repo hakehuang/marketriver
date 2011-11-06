@@ -2,10 +2,9 @@
 <ul>
 <% @products.each do |product| %>
 <div id="products">
-     <li id="products">
 	<% product.DataFiles.each do |image| %>
         <div>
- 	<li><%= link_to image_tag(image.path, :size => "64x64"),product %></li>
+ 	<p><%= link_to image_tag(image.path, :size => "64x64"),product %></p>
                <% if  request.fullpath == "/" %>
                 <% break %>
                <% end %>
@@ -19,7 +18,6 @@
         <% end %>
        </div>
        <br />
-    </li>
 </div>
 <% end %>
 </ul>

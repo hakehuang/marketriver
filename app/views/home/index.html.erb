@@ -84,7 +84,7 @@
                     <input name="searchfrom" value="headbar" type="hidden">                    
                     <input name="k" onKeyDown="if(event.keyCode == 13) document.serc.submit();" width=10 type="text">                    
                     <!-- input type="button" onClick="document.serc.submit();value="Submit" value="search"-->
-                    <%= submit_tag t(:search) %>                
+                    <%= submit_tag "google search" %>                
                 </form>
                <%= form_tag('/products/find_title') do %>
                  <%= text_field 'title','name' , :size => 20 %>
@@ -105,6 +105,7 @@
 	 </ul> 
         <% end %>
         </div>
+        <p class="floatstop"></p>
         </div>
 	<div id="layout_products">        
          <p>
