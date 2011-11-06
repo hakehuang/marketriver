@@ -56,7 +56,7 @@
 
 <div>
 <% @product.DataFiles.each do |image| %>
- <%= image_tag(image.path) %>
+ <%= image_tag(image.path, :size => "64x64") %>
 <% end %>
 </div>
 
