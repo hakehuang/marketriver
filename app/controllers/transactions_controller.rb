@@ -15,7 +15,9 @@ class TransactionsController < ApplicationController
   # GET /transactions/1.xml
   def show
     @transaction = Transaction.find(params[:id])
-
+    @bc = Customer.find(@transaction.borrow_customer) 
+    @lc = Customer.find(@transaction.lent_customer) 
+    @pd = Product.find(@transaction.product_id) 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @transaction }
@@ -39,9 +41,13 @@ class TransactionsController < ApplicationController
   # GET /transactions/1/edit
   def edit
     @transaction = Transaction.find(params[:id])
+    @pd = Product.find(@transaction.product_id) 
     if (current_user.id != @transaction.product.user.id ) \
 	and (current_user.id != @transaction.user.id )
        redirect_to products_path,:notice => 'You can not modify it'
+    else
+       @lc = User.find(@transaction.product.user.id).customers
+       @bc = User.find(@transaction.user.id).customers
     end
   end
 

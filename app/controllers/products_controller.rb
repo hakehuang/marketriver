@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
   # GET /products.xml
   def index
     @products = Product.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @products }
@@ -23,7 +22,8 @@ class ProductsController < ApplicationController
   def borrow
     @product = Product.find(params[:product]["id"])
     @transact = 1
-    
+    @bc = nil
+    @lc = nil
     if (current_user.id != @product.user.id )
 	@render = User.find(@product.user_id)
         @borrower = User.find(current_user.id)
@@ -32,16 +32,18 @@ class ProductsController < ApplicationController
 		if (@customer.credits > 2)
 		@customer.credits = @customer.credits - 2
                 @transact = 1
+                @bc=@customer.id
 		@customer.save
 		end  
         end
 	if ( @transact == 1)
 	 for @customer in @render.customers
 		@customer.credits = @customer.credits + 2  
-		@customer.save
+		@lc=@customer.id
+                @customer.save
          end
         @product.save
-        Transaction.logtransaction(current_user.id,@product.id, 1)
+        Transaction.logtransaction(current_user.id,@product.id, 1, @bc,@lc)
         	redirect_to products_path,:notice => 'you have borrow this products'
         else
 		redirect_to products_path,:notice => 'you can not borrow this product'

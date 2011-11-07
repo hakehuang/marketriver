@@ -2,7 +2,7 @@
 
 <p>
   <b>Product:</b>
-  <%= link_to @transaction.product_id.to_s  ,product_path(@transaction.product_id) %>
+  <%= link_to @pd.name  ,product_path(@transaction.product_id) %>
 </p>
 
 <p>
@@ -20,20 +20,14 @@
   <%= @transaction.status %>
 </p>
 
-
-<p>
-  <b>User:</b>
-  <%= @transaction.user_id %>
-</p>
-
 <p>
   <b>Borrow customer:</b>
-  <%= @transaction.borrow_customer %>
+  <%= link_to @bc.nickname,customer_path(@bc)  %>
 </p>
 
 <p>
   <b>Lent customer:</b>
-  <%= @transaction.lent_customer %>
+  <%=link_to  @lc.nickname, customer_path(@lc) %>
 </p>
 
 

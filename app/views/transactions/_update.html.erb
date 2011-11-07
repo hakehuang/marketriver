@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :product_id %><br />
-    <%= f.text_field :product_id, :disabled => 'disabled'%>
+    <%= @pd.name %>
   </div>
   <div class="field">
     <%= f.label :trans_stime %><br />
@@ -25,19 +25,20 @@
   </div>
   <div class="field">
     <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id, :disabled => 'disabled' %>
+    <%= f.select :status, [:borrowing, :confirming, :lenting, :logistic] %>
   </div>
   <div class="field">
     <%= f.label :borrow_customer %><br />
-    <%= f.text_field :borrow_customer, :disabled => 'disabled' %>
+    <% for @b in @bc  %>
+    <%= f.radio_button :borrow_customer, @b.id %><%= @b.nickname %><br />
+    <%= @b.phone  %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :lent_customer %><br />
-    <%= f.text_field :lent_customer, :disabled => 'disabled' %>
+    <% for @l in @lc  %>
+    <%= f.radio_button :lent_customer, @l.id %><%= @l.nickname %><br />
+    <% end  %>
   </div>
   <div class="actions">
     <%= f.submit %>

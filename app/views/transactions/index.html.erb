@@ -6,7 +6,6 @@
     <th>Trans stime</th>
     <th>Trans etime</th>
     <th>Status</th>
-    <th>User</th>
     <th>Borrow customer</th>
     <th>Lent customer</th>
     <th></th>
@@ -17,14 +16,32 @@
 <% @transactions.each do |transaction| %>
   <% if (current_user.id == transaction.product.user.id) || (current_user.id == transaction.user.id)  %>
   <tr>
-    <td><%= transaction.product_id %></td>
+    <td><% @pd = Product.find(transaction.product_id) %>
+        <%= link_to @pd.name, product_path(@pd)%>
+    </td>
     <td><%= transaction.trans_stime %></td>
     <td><%= transaction.trans_etime %></td>
     <td><%= transaction.status %></td>
-    <td><%= transaction.user_id %></td>
-    <td><%= transaction.borrow_customer %></td>
-    <td><%= transaction.lent_customer %></td>
+    <td>
+       <% if transaction.borrow_customer.nil? %>
+        <% else %>
+      <% @bc = Customer.find(transaction.borrow_customer)  %>
+      <%=link_to @bc.nickname, customer_path(@bc) %>
+        <% end  %>
+    </td>
+    <td>
+       <% if transaction.lent_customer.nil? %>
+
+       <% else %>
+       <% @lc = Customer.find(transaction.lent_customer)  %>
+      <%=link_to @lc.nickname, customer_path(@lc) %>
+       <% end  %>
+    </td>
     <td><%= link_to 'Show', transaction %></td>
+    <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+     <% if (current_user.email.to_s.match("hakehuang"))  %>
+    <td><%= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete %></td>
+     <% end  %>
   </tr>
   <% end %>
 <% end %>
