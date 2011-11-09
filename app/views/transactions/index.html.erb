@@ -13,6 +13,7 @@
     <th></th>
   </tr>
 
+<%= will_paginate %>
 <% @transactions.each do |transaction| %>
   <% if (current_user.id == transaction.product.user.id) || (current_user.id == transaction.user.id)  %>
   <tr>
@@ -49,4 +50,5 @@
 
 <br />
 
+<%= will_paginate %>
 <%= link_to 'New Transaction', new_transaction_path %>

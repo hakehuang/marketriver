@@ -1,4 +1,7 @@
 <!--<h1><%= link_to "products", products_path %></h1>-->
+<% if request.fullpath != "/" %>
+<%= will_paginate %>
+<% end %>
 <ul>
 <% @products.each do |product| %>
     <div id="products" class="float_left_list">
@@ -10,12 +13,18 @@
 	<li><%= link_to product.name, product %></li> 
         <li>$<%= product.price %></li>
         <% if request.fullpath != "/" %>
+           <% if current_user  %>
            <% if (current_user.id == product.user.id) || (current_user.admin?)  %>
     <li><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></li>
            <% end  %>
+           <% end %>
         <% end %>
        </div>
        <br />
     </div>
 <% end %>
 </ul>
+
+ <% if request.fullpath != "/" %>
+<%= will_paginate %>
+<% end  %>

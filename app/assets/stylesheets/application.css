@@ -15,5 +15,9 @@ img {
 img {
    background-image: url('/images/default.png')
 }
+@media print
+{
+table {page-break-after:always}
+}
 </style>
 

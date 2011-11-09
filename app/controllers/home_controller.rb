@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
-     @products = Product.all(:order => "RAND()", :limit => 5)
-     @product_types = ProductType.all   
+    @products = Product.all(:order => "RAND()", :limit => 5)
+    @product_types = ProductType.all   
     #only keep code here
     #current_user.update_attribute :admin, true
 
