@@ -27,6 +27,29 @@
     <% end %>
     <br />
   <% end %>
+   <p class="floatstop"><div class="float_left_list"><H2><%= t(:hotproduct)  %></H2></div></p>
+   <p class="floatstop"> 
+   <% @producs_prompt.each do |product| %>
+    <div id="products" class="float_left_list">
+	<% product.DataFiles.each do |image| %>
+        <div>
+ 	<p><%= link_to image_tag(image.path, :size => "64x64"),product %></p>
+                <% break %>
+	<% end %>    
+	<li><%= link_to product.name, product,{:style=>'color:#FF0000;', :class => "css_class"}  %></li> 
+        <li><font color="red">$<%= product.price %></font></li>
+        <% if request.fullpath != "/" %>
+           <% if current_user  %>
+           <% if (current_user.id == product.user.id) || (current_user.admin?)  %>
+    <li><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></li>
+           <% end  %>
+           <% end %>
+        <% end %>
+       </div>
+       <br />
+    </div>
+  <% end %>
+
 <% else %>
   <% @products.each do |product| %>
     <div id="products" class="float_left_list">

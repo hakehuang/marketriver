@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111016063859) do
+ActiveRecord::Schema.define(:version => 20111112154219) do
 
   create_table "customers", :force => true do |t|
     t.string   "nickname"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20111016063859) do
     t.string   "cata_level_1"
     t.string   "cata_level_2"
     t.enum     "sharemode",      :limit => [:for_sale, :for_rent, :for_free], :default => :for_free
+    t.boolean  "prompt",                                                      :default => false
   end
 
   create_table "transactions", :force => true do |t|

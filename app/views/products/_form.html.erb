@@ -42,7 +42,12 @@
      <%= f.select :sharemode, @sharemode %>
      <!--%= f.select_tag options_from_collection_for_select(@sharemode, 'id', 'name') %-->
    </div>
-   
+      
+   <div class="field">
+     <%= f.label :prompt  %><br />
+     <%= f.check_box :prompt  %>
+   </div>
+
   <div class="field">
     <%= f.label t("types") %><br />
   <%= f.collection_select(:cata_level_1,  @catalog1_list,  :id, :tname,

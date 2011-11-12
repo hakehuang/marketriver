@@ -7,6 +7,7 @@ class HomeController < ApplicationController
     @products_div = [] 
     @product_types.each do |pd|
     @products_div[pd.id]  = Product.where("cata_level_1 = :type", :type => pd.id ).all(:order => "RAND()", :limit => 5)
+    @producs_prompt = Product.where("prompt = :pr", :pr => true).all(:order => "RAND()", :limit => 5)
     end
     #only keep code here
     #current_user.update_attribute :admin, true
