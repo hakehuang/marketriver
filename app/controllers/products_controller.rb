@@ -29,13 +29,18 @@ class ProductsController < ApplicationController
 	@render = User.find(@product.user_id)
         @borrower = User.find(current_user.id)
 
+        if @borrower.customers
+	@bc=@borrower.customers.first
+        end
+        if  @render.customers
+        @lc = @render.customers.first
+        end
 	#for @customer in @borrower.customers
-	#	if (@customer.credits > 2)
-	#	@customer.credits = @customer.credits - 2
-        #        @transact = 1
-        #        @bc=@customer.id
-	#	@customer.save
-	#	end  
+		#if (@customer.credits > 2)
+		#@customer.credits = @customer.credits - 2
+                #@transact = 1
+		#@customer.save
+		#end  
         #end
 	# if ( @transact == 1)
 	# for @customer in @render.customers
@@ -43,7 +48,7 @@ class ProductsController < ApplicationController
 	#	@lc=@customer.id
         #        @customer.save
         # end
-        @product.save
+        #@product.save
         Transaction.logtransaction(current_user.id,@product.id, 1, @bc,@lc)
         	redirect_to products_path,:notice => 'you have borrow this products'
         #else
