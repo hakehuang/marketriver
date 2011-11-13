@@ -12,7 +12,9 @@ class ProductsController < ApplicationController
   end
   
   def find_title
-    @products = Product.where("title LIKE :title", :title => "%" + params[:title][:name] + "%").paginate(:page => params[:page])
+    @products_name = Product.where("name LIKE :name", :name => "%" + params[:title][:name] + "%").all
+    @products_title = Product.where("title LIKE :title", :title => "%" + params[:title][:name] + "%").all
+    @products = (@products_name + @products_title).paginate(:page => params[:page])
   end
 
   def search
@@ -50,12 +52,12 @@ class ProductsController < ApplicationController
         # end
         #@product.save
         Transaction.logtransaction(current_user.id,@product.id, 1, @bc,@lc)
-        	redirect_to products_path,:notice => 'you have borrow this products'
+        	redirect_to products_path,:notice => t(:transactsubmit)
         #else
 	#	redirect_to products_path,:notice => 'you can not borrow this product'
         #end
     else
-       redirect_to products_path,:notice => 'it is your own products'
+       redirect_to products_path,:notice => t(:selfproduct)
     end
   end
   # GET /products/1
@@ -68,9 +70,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @status = [ [t(:available),1],[t(:lent), 2],[t(:soldout), 3] ]
      #code to recover old bug
-    if(@product.status.to_i != 1 && @product.status.to_i != 2 && @product.status.to_i != 3)
-      @product.status = "1"
-    end  
+    #if(@product.status.to_i != 1 && @product.status.to_i != 2 && @product.status.to_i != 3)
+    #  @product.status = "1"
+    #end  
  
     if ( @product.cata_level_1 )
       @product_type = ProductType.find(@product.cata_level_1)
@@ -78,11 +80,11 @@ class ProductsController < ApplicationController
       if ( @product.cata_level_2  )
       	@cata_level2_name = @product_type.product_cataloges.find(@product.cata_level_2).name.to_s
       else
-      @cata_level2_name = "Undefined"
+        @cata_level2_name = "Undefined"
       end
     else
-      @cata_level1_name = "Undefined"
-      @cata_level2_name = "Undefined"
+       @cata_level1_name = "Undefined"
+        @cata_level2_name = "Undefined"
     end
     respond_to do |format|
       format.html # show.html.erb
@@ -104,7 +106,7 @@ class ProductsController < ApplicationController
     @catalog1_list = ProductType.all
     @catalog2_list = ProductCataloge.all 
     
-    @sharemode = [ [t(:forfree),1],[t(:forrent), 2],[t(:forsale), 3] ]
+    @sharemode = [ [t(:for_free),1],[t(:for_rent), 2],[t(:for_sale), 3] ]
     @status = [ [t(:available),1],[t(:lent), 2],[t(:soldout), 3] ]
      
  #  @catalog1s = ProductType.all
@@ -134,10 +136,10 @@ class ProductsController < ApplicationController
     @current_cata1 = @product.cata_level_1
     @current_cata2 = @product.cata_level_2
      
-    @sharemode = [ [t(:forfree),1],[t(:forrent), 2],[t(:forsale), 3] ]
+    @sharemode = [ [t(:for_free),1],[t(:for_rent), 2],[t(:for_sale), 3] ]
     @status = [ [t(:available),1],[t(:lent), 2],[t(:soldout), 3] ]
     if ( @product.user_id != current_user.id)
-       redirect_to products_path,:notice => 'You do not own this products'
+       redirect_to products_path,:notice => t(:notyours)
     end
   end
 
@@ -156,7 +158,7 @@ class ProductsController < ApplicationController
     @status = [ [t(:available),1],[t(:lent), 2],[t(:soldout), 3] ]
     respond_to do |format|
       if @product.save
-        format.html { redirect_to edit_product_path(@product) , :notice => 'Product was successfully created.' }
+        format.html { redirect_to edit_product_path(@product) , :notice => t(:successshare) }
         format.xml  { render :xml => @product, :status => :created, :location => @product }
       else
         format.html { render :action => "new" }
@@ -169,10 +171,10 @@ class ProductsController < ApplicationController
   # PUT /products/1.xml
   def update
     @product = Product.find(params[:id])
-
+ 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to(@product, :notice => 'Product was successfully updated.') }
+        format.html { redirect_to(@product, :notice => t(:successupdate)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

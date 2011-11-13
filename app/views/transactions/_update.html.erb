@@ -12,30 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :product_id %><br />
+    <%= f.label t(:name) %><br />
     <%= @pd.name %>
   </div>
   <div class="field">
-    <%= f.label :trans_stime %><br />
+    <%= f.label t(:transtime) %><br />
     <%= f.date_select :trans_stime, :disabled => 'disabled'%>
   </div>
   <div class="field">
-    <%= f.label :trans_etime %><br />
+    <%= f.label t(:tranetime) %><br />
     <%= f.text_field :trans_etime, :disabled => 'disabled'%>
   </div>
   <div class="field">
-    <%= f.label :status %><br />
-    <%= f.select :status, [:borrowing, :confirming, :lenting, :logistic] %>
+    <%= f.label t(:status) %><br />
+    <%= f.select :status,[ [t(:borrowing),:borrowing], [t(:confirming), :confirming], [t(:lenting), :lenting], [t(:logistic),:logistic] ] %>
   </div>
   <div class="field">
-    <%= f.label :borrow_customer %><br />
+    <%= f.label t(:borrower) %><br />
     <% for @b in @bc  %>
     <%= f.radio_button :borrow_customer, @b.id %><%= @b.nickname %><br />
     <%= @b.phone  %>
     <% end %>
   </div>
   <div class="field">
-    <%= f.label :lent_customer %><br />
+    <%= f.label t(:lender) %><br />
     <% for @l in @lc  %>
     <%= f.radio_button :lent_customer, @l.id %><%= @l.nickname %><br />
     <% end  %>

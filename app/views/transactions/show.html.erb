@@ -1,35 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Product:</b>
+  <b><%= t(:name) %></b>
   <%= link_to @pd.name  ,product_path(@transaction.product_id) %>
 </p>
 
 <p>
-  <b>Trans stime:</b>
+  <b><%= t(:transtime)  %></b>
   <%= @transaction.trans_stime %>
 </p>
 
 <p>
-  <b>Trans etime:</b>
+  <b><%= t(:tranetime)  %></b>
   <%= @transaction.trans_etime %>
 </p>
 
 <p>
-  <b>Status:</b>
-  <%= @transaction.status %>
+  <b><%= t(:status)  %></b>
+  <%= t(@transaction.status) %>
 </p>
 
 <p>
-  <b>Borrow customer:</b>
+  <b><%= t(:borrower)  %></b>
   <%= link_to @bc.nickname,customer_path(@bc)  %>
 </p>
 
 <p>
-  <b>Lent customer:</b>
+  <b><%= t(:lender)  %></b>
   <%=link_to  @lc.nickname, customer_path(@lc) %>
 </p>
 
 
-<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
-<%= link_to 'Back', transactions_path %>
+<%= link_to t(:edit), edit_transaction_path(@transaction) %> |
+<%= link_to t(:back), transactions_path %>

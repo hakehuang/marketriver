@@ -9,11 +9,11 @@
 <body>
 <div id="user_nav">
   <% if user_signed_in? %>
-    Welcome <%= current_user.email %>. Not you?
+    <%= t(:welcome) %> <%= current_user.email %>. <%= t(:notyou)%>
     <%= link_to t(:logout), logout_path, :method => :delete %>
     <%= link_to t(:edit_my_profile_info), customers_path %>
   <% end %>
-<%= link_to "back to home page",root_path %>
+<%= link_to t(:backtohome),root_path %>
 </div>
 <%= yield %>
 <p class="notice"><%= notice %></p>

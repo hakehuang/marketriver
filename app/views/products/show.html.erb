@@ -2,55 +2,50 @@
 
 <div class="float_left">
 <p>
-  <b>Name:</b>
+  <b><%= t(:name) %></b>
   <%= @product.name %>
 </p>
 
 <p>
-  <b>Title:</b>
+  <b><%= t(:title)  %></b>
   <%= @product.title %>
 </p>
 
 <p>
-  <b>Content:</b>
+  <b><%= t(:content) %></b>
   <%= @product.content %>
 </p>
 
 <p>
-  <b>Status:</b>
+  <b><%= t(:status) %></b>
   <%= t(@status[@product.status.to_i][0]) %>
 </p>
 
 <p>
-  <b>Price:</b>
+  <b><%= t(:price)  %></b>
   <%= @product.price %>
 </p>
 
 <p>
-  <b>Rentableperiod:</b>
-  <%= @product.RentablePeriod %>
-</p>
-
-<p>
-  <b>Product Catalog:</b>
+  <b><%= t(:types) %></b>
   <%= @cata_level1_name  %>
 </p>
 
 <p>
-  <b>Product Type:</b>
+  <b><%= t(:cataloges)  %></b>
   <%= @cata_level2_name  %>
 </p>
 
 <p>
-  <b>Share Mode:</b>
-  <%= @product.sharemode %>
+  <b><%= t(:sharemode) %></b>
+  <%= t(@product.sharemode) %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to t(:edit), edit_product_path(@product) %> |
+<%= link_to t(:back), products_path %>
 <%= form_tag (:action => "borrow") do %>
 <%= hidden_field  "product", "id", :value => @product.id %>
-<input type="submit" value="Get me" />
+<%= submit_tag t(:getme) %>
 <% end %>
 </div>
 

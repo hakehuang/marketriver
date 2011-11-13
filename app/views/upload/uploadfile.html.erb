@@ -29,6 +29,6 @@ function addText(){
 <input id="file" name="upload[]" size='30' type="file" /></br>
  </div> 
 <%= hidden_field 'product','id', 'size' => 30, :value => params[:product_id] %>
-<input type="button" value="add" onclick="addText()"/>
-<%= submit_tag "Upload" %>
+<%= button_to_function t(:addpic), "addText()" %>
+<%= submit_tag t(:upload) %>
 <% end %> 

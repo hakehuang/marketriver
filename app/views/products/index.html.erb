@@ -4,7 +4,7 @@
 <% end %>
 <ul>
 <% if @home_page  %>
- <p class="floatstop"><div class="float_left_list"><H2><%= t(:hotproduct)  %></H2></div></p>
+ <!-- p class="floatstop"><div class="float_left_list"><H2><%= t(:hotproduct)  %></H2></div></p--->
    <p class="floatstop"> 
    <% @producs_prompt.each do |product| %>
     <div id="products" class="float_left_list">
@@ -18,7 +18,7 @@
         <% if request.fullpath != "/" %>
            <% if current_user  %>
            <% if (current_user.id == product.user.id) || (current_user.admin?)  %>
-    <li><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></li>
+    <li><%= link_to t(:destroy), product, :confirm => t(:ays), :method => :delete %></li>
            <% end  %>
            <% end %>
         <% end %>
@@ -40,7 +40,7 @@
         <% if request.fullpath != "/" %>
            <% if current_user  %>
            <% if (current_user.id == product.user.id) || (current_user.admin?)  %>
-    <li><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></li>
+    <li><%= link_to t(:destroy), product, :confirm => t(:ays), :method => :delete %></li>
            <% end  %>
            <% end %>
         <% end %>
@@ -64,7 +64,7 @@
         <% if request.fullpath != "/" %>
            <% if current_user  %>
            <% if (current_user.id == product.user.id) || (current_user.admin?)  %>
-    <li><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></li>
+    <li><%= link_to t(:destory), product, :confirm => t(:ays), :method => :delete %></li>
            <% end  %>
            <% end %>
         <% end %>

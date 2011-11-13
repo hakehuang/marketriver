@@ -43,7 +43,7 @@ class TransactionsController < ApplicationController
     @pd = Product.find(@transaction.product_id) 
     if (current_user.id != @transaction.product.user.id ) \
 	and (current_user.id != @transaction.user.id )
-       redirect_to products_path,:notice => 'You can not modify it'
+       redirect_to products_path,:notice => t(:noauth)
     else
        @lc = User.find(@transaction.product.user.id).customers
        @bc = User.find(@transaction.user.id).customers
@@ -70,10 +70,17 @@ class TransactionsController < ApplicationController
   # PUT /transactions/1.xml
   def update
     @transaction = Transaction.find(params[:id])
-
+    @pd = Product.find(@transaction.product_id) 
+    if (current_user.id != @transaction.product.user.id ) \
+	and (current_user.id != @transaction.user.id )
+       redirect_to products_path,:notice => t(:noauth)
+    else
+       @lc = User.find(@transaction.product.user.id).customers
+       @bc = User.find(@transaction.user.id).customers
+    end
     respond_to do |format|
       if @transaction.update_attributes(params[:transaction])
-        format.html { redirect_to(@transaction, :notice => 'Transaction was successfully updated.') }
+        format.html { redirect_to(@transaction, :notice => t(:successupdatetrans)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -1,13 +1,13 @@
-<h1>Listing transactions</h1>
+<h1><%= t(:listtrans) %></h1>
 
 <table>
   <tr>
-    <th>Product</th>
-    <th>Trans stime</th>
-    <th>Trans etime</th>
-    <th>Status</th>
-    <th>Borrow customer</th>
-    <th>Lent customer</th>
+    <th><%= t(:name)%></th>
+    <th><%= t(:transtime) %></th>
+    <th><%= t(:tranetime) %></th>
+    <th><%= t(:status) %></th>
+    <th><%= t(:borrower) %></th>
+    <th><%= t(:lender) %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -22,7 +22,7 @@
     </td>
     <td><%= transaction.trans_stime %></td>
     <td><%= transaction.trans_etime %></td>
-    <td><%= transaction.status %></td>
+    <td><%= t(transaction.status) %></td>
     <td>
        <% if transaction.borrow_customer.nil? %>
         <% else %>
@@ -38,10 +38,10 @@
       <%=link_to @lc.nickname, customer_path(@lc) %>
        <% end  %>
     </td>
-    <td><%= link_to 'Show', transaction %></td>
-    <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+    <td><%= link_to t(:show), transaction %></td>
+    <td><%= link_to t(:edit), edit_transaction_path(transaction) %></td>
      <% if (current_user.email.to_s.match("hakehuang"))  %>
-    <td><%= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to t(:destory), transaction, :confirm => t(:ays), :method => :delete %></td>
      <% end  %>
   </tr>
   <% end %>
@@ -51,4 +51,4 @@
 <br />
 
 <%= will_paginate %>
-<%= link_to 'New Transaction', new_transaction_path %>
+<!-- %= link_to 'New Transaction', new_transaction_path %--->
