@@ -76,15 +76,15 @@ class ProductsController < ApplicationController
  
     if ( @product.cata_level_1 )
       @product_type = ProductType.find(@product.cata_level_1)
-      @cata_level1_name = @product_type.name.to_s
+      @cata_level1_name = @product_type.tname
       if ( @product.cata_level_2  )
-      	@cata_level2_name = @product_type.product_cataloges.find(@product.cata_level_2).name.to_s
+      	@cata_level2_name = ProductCataloge.find(@product.cata_level_2).tname
       else
-        @cata_level2_name = "Undefined"
+        @cata_level2_name = "undefined"
       end
     else
-       @cata_level1_name = "Undefined"
-        @cata_level2_name = "Undefined"
+       @cata_level1_name = "undefined"
+        @cata_level2_name = "undefined"
     end
     respond_to do |format|
       format.html # show.html.erb
