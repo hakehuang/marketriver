@@ -393,3 +393,4 @@
     logistic: "Express"
     successupdatetrans: "Transaction update success"
     noauth: "Not authorized"
+    transactexist: "Transaction existed" 

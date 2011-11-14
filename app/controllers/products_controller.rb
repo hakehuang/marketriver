@@ -27,7 +27,18 @@ class ProductsController < ApplicationController
     @transact = 1
     @bc = nil
     @lc = nil
-    if (current_user.id != @product.user.id )
+    @ss = 0    
+
+    @product.Transactions.each do |t|
+      if (t.user_id == current_user.id) and (t.status != :lenting)
+        @ss = 1
+       end 
+    end
+    
+    if @ss
+      redirect_to products_path,:notice => t(:transactexist)
+    else
+     if (current_user.id != @product.user.id )
 	@render = User.find(@product.user_id)
         @borrower = User.find(current_user.id)
 
@@ -56,8 +67,9 @@ class ProductsController < ApplicationController
         #else
 	#	redirect_to products_path,:notice => 'you can not borrow this product'
         #end
-    else
+      else
        redirect_to products_path,:notice => t(:selfproduct)
+     end
     end
   end
   # GET /products/1

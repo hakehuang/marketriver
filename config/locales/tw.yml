@@ -385,3 +385,4 @@ tw:
   logistic: "物流中"
   successupdatetrans: "交易更新成功"
   noauth: "無權限"
+  transactexist: "交易已申請"
