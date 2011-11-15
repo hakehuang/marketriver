@@ -18,7 +18,8 @@
 
 <p>
   <b><%= t(:status) %></b>
-  <%= t(@status[@product.status.to_i][0]) %>
+  <%= t(@product.status) %>
+  <!--%= t(@status[@product.status.to_i - 1][0]) %-->
 </p>
 
 <p>

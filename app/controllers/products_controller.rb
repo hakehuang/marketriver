@@ -80,7 +80,8 @@ class ProductsController < ApplicationController
     end
     
     @product = Product.find(params[:id])
-    @status = [ [t(:available),1],[t(:lent), 2],[t(:soldout), 3] ]
+    @status = [ [t(:available),:available],[t(:lent), :lent],[t(:soldout), :soldout] ]
+    @sharemode = [ [t(:for_free),:for_free],[t(:for_rent), :for_rent],[t(:for_sale), :for_sale] ]
      #code to recover old bug
     #if(@product.status.to_i != 1 && @product.status.to_i != 2 && @product.status.to_i != 3)
     #  @product.status = "1"
@@ -118,8 +119,8 @@ class ProductsController < ApplicationController
     @catalog1_list = ProductType.all
     @catalog2_list = ProductCataloge.all 
     
-    @sharemode = [ [t(:for_free),1],[t(:for_rent), 2],[t(:for_sale), 3] ]
-    @status = [ [t(:available),1],[t(:lent), 2],[t(:soldout), 3] ]
+    @sharemode = [ [t(:for_free),:for_free],[t(:for_rent), :for_rent],[t(:for_sale), :for_sale] ]
+    @status = [ [t(:available),:available],[t(:lent), :lent],[t(:soldout), :soldout] ]
      
  #  @catalog1s = ProductType.all
  #  @catalog1_list = []
@@ -148,8 +149,8 @@ class ProductsController < ApplicationController
     @current_cata1 = @product.cata_level_1
     @current_cata2 = @product.cata_level_2
      
-    @sharemode = [ [t(:for_free),1],[t(:for_rent), 2],[t(:for_sale), 3] ]
-    @status = [ [t(:available),1],[t(:lent), 2],[t(:soldout), 3] ]
+    @sharemode = [ [t(:for_free),:for_free],[t(:for_rent), :for_rent],[t(:for_sale), :for_sale] ]
+    @status = [ [t(:available),:available],[t(:lent), :lent],[t(:soldout), :soldout] ]
     if ( @product.user_id != current_user.id)
        redirect_to products_path,:notice => t(:notyours)
     end
@@ -166,8 +167,8 @@ class ProductsController < ApplicationController
  
     @current_cata1 = @product.cata_level_1
     @current_cata2 = @product.cata_level_2
-    @sharemode = [ [t(:forfree),1],[t(:forrent), 2],[t(:forsale), 3] ]
-    @status = [ [t(:available),1],[t(:lent), 2],[t(:soldout), 3] ]
+    @sharemode = [ [t(:for_free),:for_free],[t(:for_rent), :for_rent],[t(:for_sale), :for_sale] ]
+    @status = [ [t(:available),:available],[t(:lent), :lent],[t(:soldout), :soldout] ]
     respond_to do |format|
       if @product.save
         format.html { redirect_to edit_product_path(@product) , :notice => t(:successshare) }
