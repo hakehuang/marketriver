@@ -12,8 +12,7 @@
 </p>
 
 <p>
-  <b><%= t(:content) %></b>
-  <%= @product.content %>
+  <%= text_area_tag t(:content), @product.content, :disabled => true %>
 </p>
 
 <p>
