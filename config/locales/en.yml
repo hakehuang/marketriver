@@ -394,3 +394,5 @@
     successupdatetrans: "Transaction update success"
     noauth: "Not authorized"
     transactexist: "Transaction existed" 
+    results: "Results"
+    noresults: "No Results"

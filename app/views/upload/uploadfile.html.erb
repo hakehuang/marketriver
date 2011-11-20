@@ -23,7 +23,7 @@ function addText(){
 </script>
 
 <%= stylesheet_link_tag "display.css" %>
-<h1>Image to upload</h1>
+<h1><%= t(:addpic)%></h1>
 <%= form_tag ({:action => 'uploadFile'}, :multipart => true) do %>
 <div id="MyFile">
 <input id="file" name="upload[]" size='30' type="file" /></br>

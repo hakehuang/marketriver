@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   def find_title
     @products_name = Product.where("name LIKE :name", :name => "%" + params[:title][:name] + "%").all
     @products_title = Product.where("title LIKE :title", :title => "%" + params[:title][:name] + "%").all
-    @products = (@products_name + @products_title).paginate(:page => params[:page])
+    @products = (@products_name + @products_title).uniq.paginate(:page => params[:page])
   end
 
   def search
@@ -118,7 +118,7 @@ class ProductsController < ApplicationController
     
     @catalog1_list = ProductType.all
     @catalog2_list = ProductCataloge.all 
-    
+    @isnew = true 
     @sharemode = [ [t(:for_free),:for_free],[t(:for_rent), :for_rent],[t(:for_sale), :for_sale] ]
     @status = [ [t(:available),:available],[t(:lent), :lent],[t(:soldout), :soldout] ]
      
@@ -144,11 +144,15 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     @catalog1_list = ProductType.all
-    @catalog2_list = ProductCataloge.all
+    if ( @product.cata_level_1 )
+     @catalog2_list = ProductCataloge.where("product_type_id = :type " , :type => @product.cata_level_1 ).all
+    else
+     @catalog2_list = ProductCataloge.all
+    end
  
     @current_cata1 = @product.cata_level_1
-    @current_cata2 = @product.cata_level_2
-     
+    @current_cata2 = @product.cata_level_2    
+ 
     @sharemode = [ [t(:for_free),:for_free],[t(:for_rent), :for_rent],[t(:for_sale), :for_sale] ]
     @status = [ [t(:available),:available],[t(:lent), :lent],[t(:soldout), :soldout] ]
     if ( @product.user_id != current_user.id)
@@ -174,6 +178,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to edit_product_path(@product) , :notice => t(:successshare) }
         format.xml  { render :xml => @product, :status => :created, :location => @product }
       else
+        @isnew = 1
         format.html { render :action => "new" }
         format.xml  { render :xml => @product.errors, :status => :unprocessable_entity }
       end

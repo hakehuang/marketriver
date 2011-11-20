@@ -327,7 +327,6 @@ tw:
     others: "其它"
   others:
     others: "其它"
-  search: "查找 ..."
   for_sale: "我要拍賣"
   for_free: "免費共享"
   for_rent: "快樂租賃"
@@ -386,3 +385,5 @@ tw:
   successupdatetrans: "交易更新成功"
   noauth: "無權限"
   transactexist: "交易已申請"
+  results: "搜尋結果"
+  noresults: "無結果"

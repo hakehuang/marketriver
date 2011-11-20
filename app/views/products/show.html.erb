@@ -11,8 +11,9 @@
   <%= @product.title %>
 </p>
 
+  <b><%= t(:content)  %></b>
 <p>
-  <%= text_area_tag t(:content), @product.content, :disabled => true %>
+  <%= text_area_tag t(:content), @product.content, { :disabled => true , :escape => false , :size => "25x10"} %>
 </p>
 
 <p>
@@ -51,7 +52,7 @@
 
 <div>
 <% @product.DataFiles.each do |image| %>
- <%= image_tag(image.path, :size => "64x64", :alt =>"missing pic" ) %>
+ <%= image_tag(image.path, :size => "128x128", :alt =>"missing pic" ) %>
 <% end %>
 </div>
 

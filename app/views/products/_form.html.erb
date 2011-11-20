@@ -58,6 +58,10 @@
 <%= hidden_field 'user','id', :value => params[:user_id] %>
   </div>
   <div class="actions">
+  <% if @isnew %>
     <%= f.submit t(:nextstep) %>
+  <% else %>
+    <%= f.submit t(:confirming) %>
+  <% end %>
   </div>
 <% end %>

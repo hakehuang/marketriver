@@ -1,15 +1,15 @@
 <!--<h1><%= link_to "products", products_path %></h1>-->
 <ul>
 <%  if @products.count == 0  %>
-<H2> no found</H2>
+<H2> <%= t(:noresults) %></H2>
 <% else  %>
-<H2> resutls: </H2>
+<H2> <%= t(:results) %> </H2>
 <p></p>
 <% @products.each do |product| %>
 <div id="products">
      <li id="products">
 	<% product.DataFiles.each do |image| %>
- 		<li><%= link_to image_tag(image.path),product %></li>
+ 		<li><%= link_to image_tag(image.path, :size => "64x64"),product %></li>
                <% if  request.fullpath == "/" %>
                 <% break %>
                <% end %>
