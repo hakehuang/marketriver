@@ -16,8 +16,7 @@
   <% if current_user %>
 <%= will_paginate %>
 <% @transactions.each do |transaction| %>
-   <% if transaction.product.user and transaction.user  %>
-  <% if (current_user.id == transaction.product.user.id) || (current_user.id == transaction.user.id)  %>
+  <% if (current_user.id == transaction.user_id or current_user.id == Product.find(transaction.product_id).user.id ) %>
   <tr>
     <td><% @pd = Product.find(transaction.product_id) %>
         <%= link_to @pd.name, product_path(@pd)%>
@@ -47,7 +46,6 @@
      <% end  %>
   </tr>
   <% end %>
-  <% end  %>
 <% end %>
 </table>
 
