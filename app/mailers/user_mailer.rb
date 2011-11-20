@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
   def welcome_email(user)
     @user = user
     @url  = "http://www.enjoybee.com/"
-    mail(:to => user.email, :subject => "Welcome to www.EnjoyBee.com")
+    mail(:to => user.email, :subject => "Welcome to www.enjoybee.com")
   end
   def password_reset(user, password)
     @user = user

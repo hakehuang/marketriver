@@ -1,0 +1,11 @@
+Hi <%= @account.name %>,
+
+Your transaction with <%= @product.name %> is submit. 
+you can retrieve your product and transaction info in below
+<%link_to "this product", product_path(@product) %>
+<%link_to "this transaction link", transaction_path(@transaction) %>
+
+Regards,
+
+EnjoyBee. 
+

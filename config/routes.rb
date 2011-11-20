@@ -7,6 +7,7 @@ Phoenix::Application.routes.draw do
 #  devise_for :admins
 
   resources :transactions
+  resources :aboutus
 
   match "products/find_title" => "products#find_title"
   match "/products/borrow" => "products#borrow"
