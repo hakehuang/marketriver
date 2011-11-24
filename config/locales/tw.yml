@@ -387,3 +387,4 @@ tw:
   transactexist: "交易已申請"
   results: "搜尋結果"
   noresults: "無結果"
+  tolarge: "太大了"

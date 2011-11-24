@@ -20,13 +20,15 @@ function addText(){
     var str ='<input id="file1" name="upload[]" type="file" /></br>';
     document.getElementById('MyFile').insertAdjacentHTML("beforeEnd",str);   
 }
+
+} 
 </script>
 
 <%= stylesheet_link_tag "display.css" %>
 <h1><%= t(:addpic)%></h1>
-<%= form_tag ({:action => 'uploadFile'}, :multipart => true) do %>
+<%= form_tag ({:action => 'uploadFile'}, :multipart => true, :remote => true) do %>
 <div id="MyFile">
-<input id="file" name="upload[]" size='30' type="file" /></br>
+<input id="file" name="upload[]" size='30' type="file" accept="image/gif, image/jpeg , image/png"  /></br>
  </div> 
 <%= hidden_field 'product','id', 'size' => 30, :value => params[:product_id] %>
 <%= button_to_function t(:addpic), "addText()" %>
