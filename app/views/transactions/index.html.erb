@@ -19,8 +19,9 @@
   <% if (current_user.id == transaction.user_id)  or current_user.email.to_s.match("hakehuang") %>
   <tr>
     <td>
-      <% @pd = Product.find(transaction.product_id) %>
+      <% if ( @pd = Product.find_by_id(transaction.product_id)) %>
         <%= link_to @pd.name, product_path(@pd)%>
+      <% end %>
     </td>
     <td><%= transaction.trans_stime %></td>
     <td><%= transaction.trans_etime %></td>
@@ -28,16 +29,18 @@
     <td>
        <% if transaction.borrow_customer.nil? %>
         <% else %>
-      <% @bc = Customer.find(transaction.borrow_customer)  %>
-      <%=link_to @bc.nickname, customer_path(@bc) %>
+           <% if (@bc = Customer.find_by_id(transaction.borrow_customer))  %>
+              <%=link_to @bc.nickname, customer_path(@bc) %>
+           <% end  %>
         <% end  %>
     </td>
     <td>
        <% if transaction.lent_customer.nil? %>
 
        <% else %>
-       <% @lc = Customer.find(transaction.lent_customer)  %>
-      <%=link_to @lc.nickname, customer_path(@lc) %>
+          <% if ( @lc = Customer.find_by_id(transaction.lent_customer))  %>
+            <%=link_to @lc.nickname, customer_path(@lc) %>
+         <% end  %>
        <% end  %>
     </td>
     <td><%= link_to t(:show), transaction %></td>
