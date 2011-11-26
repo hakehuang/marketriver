@@ -10,6 +10,6 @@ class Transaction < ActiveRecord::Base
     @transaction.status = :borrowing
     @transaction.borrow_customer = bc
     @transaction.lent_customer = lc
-    @transaction.save 
+    @transaction.save
    end
 end

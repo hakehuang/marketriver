@@ -1,11 +1,29 @@
-Hi <%= @account.name %>,
 
-Your transaction with <%= @product.name %> is submit. 
-you can retrieve your product and transaction info in below
-<%link_to "this product", product_path(@product) %>
-<%link_to "this transaction link", transaction_path(@transaction) %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Hi <%= @user.name %></h1>
+    <p>
+      Your transaction with <%= @product.name %> is submit. 
+    </p>
+    <p>
+      you can retrieve your product and transaction info in below
+    </p>
+     <%link_to "this product", product_path(@product) %>
+     <%link_to "this transaction link", transaction_path(@transaction) %>
+   <br />
+   <p>  
+   Regards,
+   </p>
+   <p>
+     EnjoyBee.
+   </p> 
+  </body>
+</html>
 
-Regards,
 
-EnjoyBee. 
+
 

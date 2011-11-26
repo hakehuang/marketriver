@@ -256,6 +256,9 @@
       Sports: "Sports"
       nature: "Nature"
       health: "Health"
+      original: "Original"
+      arts: "Arts"
+      child: "Child book"
       others: "others"
     computers:
       computers: "Computers"

@@ -251,6 +251,9 @@ tw:
     passtime: "休閒"
     nature: "自然人文"
     health: " 健康"
+    original: "原文書"
+    arts: "藝術"
+    child: "童書"
     others: "其它"
   computers:
     computers: "電腦、電腦周邊"

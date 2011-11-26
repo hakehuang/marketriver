@@ -28,20 +28,18 @@ class ProductsController < ApplicationController
     @bc = nil
     @lc = nil
     @ss = 0    
-
     @product.Transactions.each do |t|
-      if (t.user_id == current_user.id) and (t.status != :lenting)
-        @ss = 1
+      if (t.user_id == current_user.id) and (t.status == :lenting)
+          @ss = 1
        end 
     end
     
-    if @ss
+    if @ss == 1
       redirect_to products_path,:notice => t(:transactexist)
     else
      if (current_user.id != @product.user.id )
 	@render = User.find(@product.user_id)
         @borrower = User.find(current_user.id)
-
         if @borrower.customers
 	@bc=@borrower.customers.first
         end
@@ -63,7 +61,7 @@ class ProductsController < ApplicationController
         # end
         #@product.save
         Transaction.logtransaction(current_user.id,@product.id, 1, @bc,@lc)
-        	redirect_to products_path,:notice => t(:transactsubmit)
+        redirect_to products_path,:notice => t(:transactsubmit)
         #else
 	#	redirect_to products_path,:notice => 'you can not borrow this product'
         #end
