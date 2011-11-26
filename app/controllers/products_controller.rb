@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!,:except => [:index, :show, :search, :find_title]
   # GET /products
   # GET /products.xml
   def index
