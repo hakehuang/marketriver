@@ -16,10 +16,11 @@
   <% if current_user %>
 <%= will_paginate %>
 <% @transactions.each do |transaction| %>
-  <% if (current_user.id == transaction.user_id)  or current_user.email.to_s.match("hakehuang") %>
+  <% @pd = Product.find_by_id(transaction.product_id)  %>
+  <% if (current_user.id == transaction.user_id) or (current_user.id == @pd.user_id) or current_user.email.to_s.match("hakehuang")  %>
   <tr>
     <td>
-      <% if ( @pd = Product.find_by_id(transaction.product_id)) %>
+      <% if @pd %>
         <%= link_to @pd.name, product_path(@pd)%>
       <% end %>
     </td>
