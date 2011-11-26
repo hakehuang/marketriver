@@ -9,10 +9,14 @@
    <div id="hotproduct">
    <% @producs_prompt.each do |product| %>
     <div id="products" class="float_left_list">
+        <% if product.DataFiles.count > 0  %>
 	<% product.DataFiles.each do |image| %>
  	<p><%= link_to image_tag(image.path, :size => "64x64"),product %></p>
                 <% break %>
 	<% end %>    
+        <% else  %>
+ 	<p><%= link_to image_tag("rails.png", :size => "64x64"),product %></p>
+        <% end  %>
 	<li><%= link_to product.name, product,{:style=>'color:#FF0000;', :class => "css_class"}  %></li> 
         <li><font color="red">$<%= product.price %></font></li>
     </div>
@@ -23,10 +27,14 @@
   <% @product_types.each do |pd|  %>
     <% @products_div[pd.id].each do |product| %>
       <div id="allproducts" class="float_left_list">
+        <% if product.DataFiles.count > 0  %>
 	<% product.DataFiles.each do |image| %>
  	<p><%= link_to image_tag(image.path, :size => "64x64"),product %></p>
                 <% break %>
 	<% end %>    
+        <% else  %>
+ 	<p><%= link_to image_tag("rails.png", :size => "64x64"),product %></p>
+        <% end  %>
 	<li><%= link_to product.name, product %></li> 
         <li>$<%= product.price %></li>
      </div> 
@@ -37,11 +45,15 @@
 <% else %>
   <% @products.each do |product| %>
     <div id="products" class="float_left_list">
+        <% if product.DataFiles.count > 0  %>
 	<% product.DataFiles.each do |image| %>
         <div>
  	<p><%= link_to image_tag(image.path, :size => "64x64"),product %></p>
                 <% break %>
 	<% end %>    
+        <% else  %>
+ 	<p><%= link_to image_tag("rails.png", :size => "64x64"),product %></p>
+        <% end  %>
 	<li><%= link_to product.name, product %></li> 
         <li>$<%= product.price %></li>
         <% if request.fullpath != "/" %>
