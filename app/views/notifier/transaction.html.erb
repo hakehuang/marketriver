@@ -5,7 +5,7 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>Hi <%= @user.name %></h1>
+    <h1>Hi <%= @user.email %></h1>
     <p>
       Your transaction with <%= @product.name %> is submit. 
     </p>
@@ -13,7 +13,6 @@
       you can retrieve your product and transaction info in below
     </p>
      <%link_to "this product", product_path(@product) %>
-     <%link_to "this transaction link", transaction_path(@transaction) %>
    <br />
    <p>  
    Regards,
