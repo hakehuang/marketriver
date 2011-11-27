@@ -74,7 +74,11 @@
         <%= link_to t(:aboutus), aboutus_path  %>
          </li>
          <li>
-<a id="setHomePage" style="behavior:url(#default#homepage);" onclick="SetHome(this)" href="javascript:void(0);"><%= t(:topme) %></a>       
+        <%= link_to t(:recruit), recruit_index_path %>
+<!---a id="setHomePage" style="behavior:url(#default#homepage);" onclick="SetHome(this)" href="javascript:void(0);"><%= t(:topme) %></a--->       
+         </li>
+         <li>
+        <%= link_to t(:faq), faq_index_path %>
          </li>
         </ul>
         </div>

@@ -8,6 +8,8 @@ Phoenix::Application.routes.draw do
 
   resources :transactions
   resources :aboutus
+  resources :recruit
+  resources :faq
 
   match "products/find_title" => "products#find_title"
   match "/products/borrow" => "products#borrow"
