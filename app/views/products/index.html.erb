@@ -17,7 +17,7 @@
         <% else  %>
  	<p><%= link_to image_tag("rails.png", :size => "64x64"),product %></p>
         <% end  %>
-	<li><%= link_to product.name.slice(0,12), product,{:style=>'color:#FF0000;', :class => "css_class"}  %></li> 
+	<li><%= link_to product.name.slice(0,24), product,{:style=>'color:#FF0000;', :class => "css_class"}  %></li> 
         <li><font color="red">$<%= product.price %></font></li>
     </div>
    <% end %>
@@ -35,7 +35,7 @@
         <% else  %>
  	<p><%= link_to image_tag("rails.png", :size => "64x64"),product %></p>
         <% end  %>
-	<li><%= link_to product.name.slice(0,12), product %></li> 
+	<li><%= link_to product.name.slice(0,24), product %></li> 
         <li>$<%= product.price %></li>
      </div> 
     <% end %>
@@ -54,7 +54,7 @@
         <% else  %>
  	<p><%= link_to image_tag("rails.png", :size => "64x64"),product %></p>
         <% end  %>
-	<li><%= link_to product.name.slice(0,12), product %></li> 
+	<li><%= link_to product.name.slice(0,24), product %></li> 
         <li>$<%= product.price %></li>
         <li>ID:<%=link_to product.id,product %></li>
         <% if request.fullpath != "/" %>
