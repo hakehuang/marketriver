@@ -1,12 +1,8 @@
 class Notifier < ActionMailer::Base
   default :from => "happy@enjoybee.com"
-  def transaction(recipient, p, t)
-    @account = recipient
+  def transaction(recipient, p)
+    @user = recipient
     @product = p
-    @transaction = t
-    mail(:to => recipient.email) do |format|
-  	format.text
-  	format.html
-    end
+    mail(:to => recipient.email, :subject => t(:transactsubmit)) 
   end
 end
