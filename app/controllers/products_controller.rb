@@ -117,7 +117,9 @@ class ProductsController < ApplicationController
     @product.user_id = current_user.id
     
     @catalog1_list = ProductType.all
-    @catalog2_list = ProductCataloge.all 
+    @product.cata_level_1 = ProductType.last.id
+    @catalog2_list = ProductCataloge.where("product_type_id = :type " , :type => @product.cata_level_1 ).all
+    @product.cata_level_2 = ProductCataloge.last.id
     @isnew = true 
     @sharemode = [ [t(:for_free),:for_free],[t(:for_rent), :for_rent],[t(:for_sale), :for_sale] ]
     @status = [ [t(:available),:available],[t(:lent), :lent],[t(:soldout), :soldout] ]
@@ -150,9 +152,6 @@ class ProductsController < ApplicationController
      @catalog2_list = ProductCataloge.all
     end
  
-    @current_cata1 = @product.cata_level_1
-    @current_cata2 = @product.cata_level_2    
- 
     @sharemode = [ [t(:for_free),:for_free],[t(:for_rent), :for_rent],[t(:for_sale), :for_sale] ]
     @status = [ [t(:available),:available],[t(:lent), :lent],[t(:soldout), :soldout] ]
     if ( @product.user_id != current_user.id)
@@ -169,8 +168,8 @@ class ProductsController < ApplicationController
     @catalog1_list = ProductType.all
     @catalog2_list = ProductCataloge.all
  
-    @current_cata1 = @product.cata_level_1
-    @current_cata2 = @product.cata_level_2
+    #@current_cata1 = @product.cata_level_1
+    #@current_cata2 = @product.cata_level_2
     @sharemode = [ [t(:for_free),:for_free],[t(:for_rent), :for_rent],[t(:for_sale), :for_sale] ]
     @status = [ [t(:available),:available],[t(:lent), :lent],[t(:soldout), :soldout] ]
     respond_to do |format|

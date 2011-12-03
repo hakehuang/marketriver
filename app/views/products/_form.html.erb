@@ -47,7 +47,7 @@
   <div class="field">
     <%= f.label t(:types) %><br />
   <%= f.collection_select(:cata_level_1,  @catalog1_list,  :id, :tname,
-                      {:prompt   => @current_cata1?@current_cata1: t(:selectproducttype)} ) %>
+                      {:prompt   => true} ) %>
                    <!-- {:onchange => "#{remote_function(:url  => {:action => "update_cata_level_2"},:with => "'cata_level_1='+value")}"}) %-->
 <br/>
     <%= f.label t(:cataloges) %><br />
