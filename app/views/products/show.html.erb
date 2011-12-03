@@ -13,7 +13,7 @@
 
   <b><%= t(:content)  %></b>
 <p>
-  <%= text_area_tag t(:content), @product.content, { :disabled => true , :escape => false , :size => "25x10"} %>
+  <%= text_area_tag t(:content), @product.content, { :escape => false , :size => "25x10", :class => "content", :readonly =>""} %>
 </p>
 
 <p>
