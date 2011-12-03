@@ -13,9 +13,9 @@ class UploadController < ApplicationController
     i = params[:upload].size
     for num in (0..i-1)
       file = params[:upload][num]
-      if file.size > 50000
+      if file.size > 100000
     	render :text => file.original_filename + t(:toolarge) + "> 50K"
-        continue;
+        return
       end
       if !file.original_filename.empty?
         @filename=getFileName(file.original_filename)

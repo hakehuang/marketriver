@@ -31,10 +31,7 @@ Phoenix::Application.configure do
  config.action_mailer.delivery_method = :smtp
  config.action_mailer.smtp_settings = {
   :address              => "mail.enjoybee.com",
-  :port                 => 587,
+  :port                 => 25,
   :domain               => 'enjoybee.com',
-  :user_name            => 'happy',
-  :password             => 'francois92',
-  :authentication       => 'plain',
-  :enable_starttls_auto => true }  
+  :enable_starttls_auto => false}  
 end

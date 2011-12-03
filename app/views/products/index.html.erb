@@ -45,12 +45,10 @@
 <% else %>
   <% @products.each do |product| %>
     <div id="products" class="float_left_list">
-        <% if product.DataFiles.count > 0  %>
-	<% product.DataFiles.each do |image| %>
         <div>
- 	<p><%= link_to image_tag(image.path, :size => "64x64"),product %></p>
-                <% break %>
-	<% end %>    
+        <% if product.DataFiles.count > 0  %>
+	<% @image = product.DataFiles.first %>
+ 	<p><%= link_to image_tag(@image.path, :size => "64x64"),product %></p>
         <% else  %>
  	<p><%= link_to image_tag("rails.png", :size => "64x64"),product %></p>
         <% end  %>
