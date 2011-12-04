@@ -21,13 +21,14 @@
   <%= t(@transaction.status) %>
 </p>
 
-<% if ! @bc.nil?  %>
 <p>
   <b><%= t(:borrower)  %></b>
+   <b><%= @borrow_mail %></b>
+<% if ! @bc.nil?  %>
   <%= link_to @bc.nickname,customer_path(@bc)  %>
+<% end %>
 </p>
 
-<% end %>
 <% if ! @lc.nil?  %>
 <p>
   <b><%= t(:lender)  %></b>

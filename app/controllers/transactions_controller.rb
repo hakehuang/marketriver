@@ -14,6 +14,7 @@ class TransactionsController < ApplicationController
   # GET /transactions/1.xml
   def show
     @transaction = Transaction.find(params[:id])
+    @borrow_mail = User.find_by_id(@transaction.user_id).email
     if ! @transaction.borrow_customer.nil?
     @bc = Customer.find_by_id(@transaction.borrow_customer) 
     end
