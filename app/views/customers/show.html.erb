@@ -1,35 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Nickname:</b>
+  <b><%= t(:nickname)%></b>
   <%= @customer.nickname %>
 </p>
 
 <p>
-  <b>Phone:</b>
+  <b><%= t(:phone)%></b>
   <%= @customer.phone %>
 </p>
 
 <p>
-  <b>Credits:</b>
+  <b><%=t(:credit)  %></b>
   <%= @customer.credits %>
 </p>
 
 <p>
-  <b>Maintenance:</b>
+  <b><%= t(:maintenance)%></b>
   <%= @customer.maintenance %>
 </p>
 
 <p>
-  <b>Status:</b>
+  <b><%= t(:status)%></b>
   <%= @customer.Status %>
 </p>
 
 <p>
-  <b>User:</b>
+  <b><%= t(:user)%></b>
   <%= @customer.user.id %>
 </p>
 
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to t(:edit), edit_customer_path(@customer) %> |
+<%= link_to t(:back), customers_path %>

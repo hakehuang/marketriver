@@ -13,27 +13,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nickname %><br />
+    <%= f.label t(:nickname) %><br />
     <%= f.text_field :nickname %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br />
+    <%= f.label t(:phone) %><br />
     <%= f.text_field :phone %>
   </div>
   <div class="field">
-    <%= f.label :credits %><br />
+    <%= f.label t(:credit) %><br />
     <%= f.text_field :credits ,:disabled => "if $('session[user]').value != 'admin' disabled"%>
   </div>
   <div class="field">
-    <%= f.label :maintenance %><br />
+    <%= f.label t(:maintenance) %><br />
     <%= f.text_field :maintenance %>
   </div>
   <div class="field">
-    <%= f.label :Status %><br />
+    <%= f.label t(:status) %><br />
     <%= f.check_box :Status %>
   </div>
   <div class="field" >
-    <%= f.label :user_id %><br />
+    <%= f.label t(:user) %><br />
     <%= f.text_field :user_id, :disabled => "disabled",:class=>'textbg' %>
   </div>
   <div class="actions">
