@@ -42,6 +42,23 @@
   <%= t(@product.sharemode) %>
 </p>
 
+<p>
+  <br><%=  t(:quantity)  %></b>
+   <%= @product.quantity  %>
+</p>
+
+<p>
+  <br><%=  t(:beepoint)  %></b>
+   <%= @product.beepoint  %>
+</p>
+<p>
+  <br><%=  t(:credit)  %></b>
+   <%= @product.credit  %>
+</p>
+<p>
+  <br><%=  t(:location)  %></b>
+   <%= @product.location  %>
+</p>
 <%= link_to t(:edit), edit_product_path(@product) %> |
 <%= link_to t(:back), products_path %>
 <%= form_tag (:action => "borrow") do %>

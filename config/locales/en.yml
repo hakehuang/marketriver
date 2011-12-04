@@ -412,3 +412,6 @@
     maintenance: "Maintenance"
     user: "User ID"
     newcustomer: "New Customer"
+    quantity: "Quantity"
+    beepoint: "Bee Point"
+    location: "Location"

@@ -404,3 +404,6 @@ tw:
   user: "用戶ID" 
   newcustomer: "創建新用戶信息"
   phone: "電話"
+  quantity: "數量"
+  beepoint: "點數"
+  location: "地址"

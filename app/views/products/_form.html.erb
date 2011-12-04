@@ -57,6 +57,24 @@
    <!--  <%= f.label :user_id %><br /> -->
 <%= hidden_field 'user','id', :value => params[:user_id] %>
   </div>
+
+   <div class="field">
+     <%= f.label t(:quantity)  %><br />
+     <%= f.text_field :quantity  %>
+   </div>
+   <div class="field">
+     <%= f.label t(:beepoint)  %><br />
+     <%= f.text_field :beepoint  %>
+   </div>
+   <div class="field">
+     <%= f.label t(:credit)  %><br />
+     <%= f.text_field :credit  %>
+   </div>
+   <div class="field">
+     <%= f.label t(:location)  %><br />
+     <%= f.text_field :location  %>
+   </div>
+
   <div class="actions">
   <% if @isnew %>
     <%= f.submit t(:nextstep) %>
