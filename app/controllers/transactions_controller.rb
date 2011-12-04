@@ -15,13 +15,13 @@ class TransactionsController < ApplicationController
   def show
     @transaction = Transaction.find(params[:id])
     if ! @transaction.borrow_customer.nil?
-    @bc = Customer.find(@transaction.borrow_customer) 
+    @bc = Customer.find_by_id(@transaction.borrow_customer) 
     end
     if ! @transaction.lent_customer.nil?
-    @lc = Customer.find(@transaction.lent_customer) 
+    @lc = Customer.find_by_id(@transaction.lent_customer) 
     end
     if ! @transaction.product_id.nil?
-    @pd = Product.find(@transaction.product_id) 
+    @pd = Product.find_by_id(@transaction.product_id) 
     end
     respond_to do |format|
       format.html # show.html.erb
@@ -51,8 +51,8 @@ class TransactionsController < ApplicationController
 	and (current_user.id != @transaction.user.id )
        redirect_to products_path,:notice => t(:noauth)
     else
-       @lc = User.find(@transaction.product.user.id).customers
-       @bc = User.find(@transaction.user.id).customers
+       @lc = User.find_by_id(@transaction.product.user.id).customers
+       @bc = User.find_by_id(@transaction.user.id).customers
     end
   end
 
@@ -81,8 +81,8 @@ class TransactionsController < ApplicationController
 	and (current_user.id != @transaction.user.id )
        redirect_to products_path,:notice => t(:noauth)
     else
-       @lc = User.find(@transaction.product.user.id).customers
-       @bc = User.find(@transaction.user.id).customers
+       @lc = User.find_by_id(@transaction.product.user.id).customers
+       @bc = User.find_by_id(@transaction.user.id).customers
     end
     respond_to do |format|
       if @transaction.update_attributes(params[:transaction])
