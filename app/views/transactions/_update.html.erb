@@ -10,11 +10,12 @@
       </ul>
     </div>
   <% end %>
-
+<% if ! @pd.nil?  %>
   <div class="field">
     <%= f.label t(:name) %><br />
     <%= @pd.name %>
   </div>
+<% end %>
   <div class="field">
     <%= f.label t(:transtime) %><br />
     <%= f.date_select :trans_stime, :disabled => 'disabled'%>
@@ -27,6 +28,7 @@
     <%= f.label t(:status) %><br />
     <%= f.select :status,[ [t(:borrowing),:borrowing], [t(:confirming), :confirming], [t(:lenting), :lenting], [t(:logistic),:logistic] ] %>
   </div>
+<% if ! @bc.nil?  %>
   <div class="field">
     <%= f.label t(:borrower) %><br />
     <% for @b in @bc  %>
@@ -34,12 +36,16 @@
     <%= @b.phone  %>
     <% end %>
   </div>
+<% end  %>
+
+<% if ! @lc.nil?  %>
   <div class="field">
     <%= f.label t(:lender) %><br />
     <% for @l in @lc  %>
     <%= f.radio_button :lent_customer, @l.id %><%= @l.nickname %><br />
     <% end  %>
   </div>
+<% end  %>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -14,9 +14,15 @@ class TransactionsController < ApplicationController
   # GET /transactions/1.xml
   def show
     @transaction = Transaction.find(params[:id])
+    if ! @transaction.borrow_customer.nil?
     @bc = Customer.find(@transaction.borrow_customer) 
+    end
+    if ! @transaction.lent_customer.nil?
     @lc = Customer.find(@transaction.lent_customer) 
+    end
+    if ! @transaction.product_id.nil?
     @pd = Product.find(@transaction.product_id) 
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @transaction }
