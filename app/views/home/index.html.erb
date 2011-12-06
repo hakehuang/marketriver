@@ -89,7 +89,7 @@
                     <input name="k" onKeyDown="if(event.keyCode == 13) document.serc.submit();" width=10 type="text">                    
                     < %= submit_tag "google search" % >                
                 </form-->
-               <%= form_tag('/products/find_title') do %>
+               <%= form_tag '/products/find_title', :method => 'get' do %>
                  <%= text_field 'title','name' , :size => 20 %>
                  <%= submit_tag t(:search) %>
                 <% end  %> 

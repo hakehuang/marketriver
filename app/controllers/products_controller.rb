@@ -12,9 +12,10 @@ class ProductsController < ApplicationController
   end
   
   def find_title
-    @products_name = Product.where("name LIKE :name", :name => "%" + params[:title][:name] + "%").all
-    @products_title = Product.where("title LIKE :title", :title => "%" + params[:title][:name] + "%").all
-    @products = (@products_name + @products_title).uniq.paginate(:page => params[:page])
+    @search_condition = params[:title][:name]
+    @products_name = Product.where("name LIKE :name", :name => "%" +  @search_condition + "%").all
+    @products_title = Product.where("title LIKE :title", :title => "%" +  @search_condition + "%").all
+    @products = (@products_name + @products_title).uniq.paginate(:page => params[:page], :per_page => 5)
   end
 
   def search
