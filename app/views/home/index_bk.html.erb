@@ -1,13 +1,118 @@
-<h1>Web Bee</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<div id="browser">
-<%= link_to "all products", products_path %>
-</div>
-<div id="authencation">
-<p>
-<%= link_to "login" , new_user_session_path %>
-</p>
-<p>
-<%= link_to "register" , new_user_registration_path %>
-</p>
-</div>
+﻿<html>    
+    <head>        
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
+        <style type="text/css">
+	html,body{height:100%; margin:5; padding:5;}
+	.logo{float:left;height:80px; width:auto}
+	img.normal{height:auto; width:auto}
+	#layout_products{float:left; background:#FFFFFF; width:auto; height:auto; margin:4px;}
+	#layout_foot{float:right; background:#FFFFFF; width:85%; height::auto; margin:2px;}
+	#layout_25{background:#FFFFFF; width:auto;margin:5px;border:solid 5px white;}
+	.floatstop{clear:both;}
+        #layout_right{float:right; background:#00FFFF;text-align:left}
+        #products{float:left; margin:10px;margin:10px;display:inline;}
+        .layout_top li{ float:left; margin:10px;font:12px;display:inline;}
+        .layout_top li a {display:block; padding:8px 50px;background:#3A4953;color:#fff; text-decoration:none;border-right:1px solid #000;text-align:center}
+        .layout_top li a:hover {background:#146C9C;color:#fff;text-decoration:none;border-right:1px solid #000;}
+        #search {
+              position:relative;
+	      left: 30%;
+	      background: #FFFFFF;
+	      padding:2px;
+	      font-family:arial;
+              width:100%;
+	}
+        #layout_menu {float:left;}
+	</style>
+    <script type="text/javascript">
+        $(function() {
+            $('#menu1').menuTree();
+
+            $('#menu2').menuTree({
+                expandSpeed: 1000,
+                collapseSpeed: 1000,
+                expandEasing: 'easeOutBounce',
+                collapseEasing: 'easeOutBounce',
+                parentMenuTriggerCallback: false,
+                multiOpenedSubMenu: true
+            });
+            $('#menu3').menuTree({
+                expandedNode: '2.1'
+            }, function(rel) {
+                alert(rel);
+            });
+        });
+    </script>
+</head>    
+    <body> 
+        <div>
+        <%= link_to image_tag("logo.jpg", :class => "logo"), root_path %>
+        <ul class="layout_top">
+	<li>
+        <%= link_to t(:browse_products), products_path  %>
+         </li>
+       <% if user_signed_in? %>
+	<li>
+        <%= link_to t(:share_my_goods), new_product_path  %>
+         </li>
+	<li>
+        <%= link_to t(:my_transactions), transactions_path  %>
+         </li>
+       <% end  %>
+         <li>
+        <%= link_to t(:register), new_user_registration_path %>
+         </li>
+         <li>
+        <%= link_to t(:login), user_session_path %>
+         </li>
+	<li>
+        <%= mail_to "happy@enjoybee.com", t(:blog) %>
+         </li>
+         <li>
+        <%= link_to t(:aboutus), aboutus_path  %>
+         </li>
+         <li>
+        <%= link_to t(:recruit), recruit_index_path %>
+<!---a id="setHomePage" style="behavior:url(#default#homepage);" onclick="SetHome(this)" href="javascript:void(0);"><%= t(:topme) %></a--->       
+         </li>
+         <li>
+        <%= link_to t(:faq), faq_index_path %>
+         </li>
+        </ul>
+        </div>
+        <p class="floatstop"></p>
+	<div id="search">            
+                <!-- form name="serc" method="get" action="http://www.google.com">                    
+                    <input name="searchfrom" value="headbar" type="hidden">                    
+                    <input name="k" onKeyDown="if(event.keyCode == 13) document.serc.submit();" width=10 type="text">                    
+                    < %= submit_tag "google search" % >                
+                </form-->
+               <%= form_tag '/products/find_title', :method => 'get' do %>
+                 <%= text_field 'title','name' , :size => 20 %>
+                 <%= submit_tag t(:search) %>
+                <% end  %> 
+        </div> 
+        <div id="layout_menu"> 
+	<div id="menu1" class="menuTree">
+        <% for @pt in  @product_types %> 
+	 <ul> 
+	  <li class="parent"><a href="#" mce_href=""><%= @pt.tname %></a>
+	   <ul>
+           <% for @pc in @pt.product_cataloges %>
+	    <li class="child"><%= link_to @pc.tname, products_search_path(:pt => @pt.id, :pc => @pc.id) %>
+	   <% end %>
+           </ul> 
+          </li> 
+	 </ul> 
+        <% end %>
+        </div>
+        <p class="floatstop"></p>
+        </div>
+	<div id="layout_products">        
+         <p>
+	<%= render :template => 'products/index' %>
+         </p>
+        </div>
+        <p class="floatstop"></p>
+   </body>
+    </html>

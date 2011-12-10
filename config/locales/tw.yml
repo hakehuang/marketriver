@@ -228,7 +228,7 @@ tw:
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
   blog: "留言與建議"
-  browse_products: "蜂蜜"
+  browse_products: "就是愛蜂蜜"
   edit_my_profile_info: "帳戶資訊維護"
   help: "使用說明"
   login: "登入"
@@ -340,10 +340,10 @@ tw:
   notyou: "不是您嗎?"
   notyours: "不是您的!"
   backtohome: "回到首頁"
-  email: "電子郵件信箱"
+  email: "郵件信箱"
   email2: "包租蜂帳號"
   passwd: "密碼"
-  rememberme: "保持我的登入狀態"
+  rememberme: "蜜蜂愛上線"
   signin: "登入"
   signup: "註冊"
   forgetpasswd: "忘記密碼了嗎?"

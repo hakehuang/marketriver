@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd/">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title><%= t(:wtitle) %></title>
   <%= stylesheet_link_tag "application" %>
@@ -13,8 +13,11 @@
     <%= link_to t(:logout), logout_path, :method => :delete %>
     <%= link_to t(:edit_my_profile_info), customers_path %>
   <% end %>
+<% if controller_name != 'home'  %>
 <%= link_to t(:backtohome),root_path %>
+<% end %>
 </div>
+<p class="floatstop"></p>
 <%= yield %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>

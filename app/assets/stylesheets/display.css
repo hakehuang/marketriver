@@ -1,7 +1,8 @@
 .textbg{
 background-color:gray;
 border:none 
-} 
+}
+.logo{float:left;height:160px; width:auto}
 .float_li{ float:right; background:#FFFFFF}
 .float_right{ float:right; background:#FFFFFF}
 .float_left{ float:left; background:#FFFFFF}
@@ -16,4 +17,9 @@ border-right:1px solid white;
 }
 .floatstop{clear:both;}
 .content{width:200px;height:122px;overflow-y:auto}
+.homehead{
+color: gray;
+text-decoration: none;
+font-size:12px;
+}
 #layout_right{float:right; background:#00FFFF;text-align:left}

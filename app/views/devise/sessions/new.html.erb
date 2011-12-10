@@ -1,17 +1,23 @@
-<h2><%= t(:login)%></h2>
-
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label t(:email) %><br />
-  <%= f.email_field :email %></p>
-
-  <p><%= f.label t(:passwd) %><br />
-  <%= f.password_field :password %></p>
-
+  <fieldset>
+  <legend><%= t(:login) %></legend>
+  <div>
+  <%= f.label t(:email) %>
+  <%= f.email_field :email, :size => 16 %>
+  </div>
+  <div>
+  <%= f.label t(:passwd) %>
+  <%= f.password_field :password , :size => 16 %>
+  </div>
   <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label t(:rememberme) %></p>
+  <div>
+  <%= f.label t(:rememberme) %>
+  <%= f.check_box :remember_me %> 
+  </div>
   <% end -%>
-
-  <p><%= f.submit t(:signin) %></p>
+  <div class="homehead">
+  <%= render :partial => "devise/shared/links" %>
+  <%= f.submit t(:signin) , :size => 16 %>
+  <div>
+  </fieldset>
 <% end %>
-
-<%= render :partial => "devise/shared/links" %>
