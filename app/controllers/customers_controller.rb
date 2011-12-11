@@ -5,7 +5,11 @@ class CustomersController < ApplicationController
   # GET /customers.xml
   def index
     if current_user.id
-    @customers = Customer.where("user_id = :id", :id => current_user.id).all
+     if current_user.email.to_s.match("hakehuang")
+    	@customers = Customer.all
+     else
+    	@customers = Customer.where("user_id = :id", :id => current_user.id).all
+     end
     else
     @customers = nil
     end
