@@ -85,7 +85,7 @@ class TransactionsController < ApplicationController
        @lc = User.find_by_id(@transaction.product.user.id).customers
        @bc = User.find_by_id(@transaction.user.id).customers
        Notifier.update(current_user,@product).deliver
-       Notifier.update( @transaction.product.user.id, @product).deliver
+       Notifier.update( @transaction.product.user, @product).deliver
     end
         
     respond_to do |format|

@@ -9,6 +9,7 @@ border:none
 .float_left_list{
 float:left;
 width:7em;
+height: 220px;
 text-decoration:none;
 color:black;
 background-color:#FFFFFF;
