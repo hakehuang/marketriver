@@ -1,6 +1,6 @@
 <style>
 .user_new {float: right;
-width:250px;
+width:300px;
 margin:auto;
 margin-top: 20px;
 margin-right: 15px;
@@ -50,9 +50,6 @@ border:1px solid #333333;
         <%= link_to t(:browse_products), products_path  %>
         </li>
         <li>
-        <%= mail_to "happy@enjoybee.com", t(:blog) %>
-        </li>
-        <li>
 <a href="https://imo.im/">網路語音客服</a>
         </li>
         <li>
@@ -61,12 +58,6 @@ border:1px solid #333333;
         <li>
         <%= link_to t(:share_my_goods), new_product_path  %>
         </li>
-        <li>
-        <%= link_to t(:recruit), recruit_index_path %>
-        </li>
-         <li>
-        <%= link_to t(:faq), faq_index_path %>
-         </li>
        <li>
       <div id="topBar"> 
        <%= form_tag '/products/find_title', :method => 'get' do %>
@@ -138,7 +129,22 @@ border:1px solid #333333;
   <p>Robin</p>   
   <p>Ruby</p>   
   <p>Hake</p>   
-  <p>May Be you are the next</p>   
-  </div>  
+  <p>May Be you are the next</p> 
+  </marquee>  
+  </div>
+  <div id="footer">
+    <div class="footer_p">
+      <%= link_to image_tag("facebook_24.png"), root_path %>
+     <%= link_to image_tag("rss_24.png"), root_path %>
+      <a href="http://www.enjoybee.com/">Copyright 2011 包租蜂網路科技 ALL RIGHTS RESERVED.</a>
+      <div class="footer_textL">
+        <%= link_to t(:recruit), recruit_index_path %>
+        <%= mail_to "happy@enjoybee.com", t(:blog) %>
+        <a href="http://www.enjoybee.com/">隱私權聲明|</a>
+        <a href="http://www.enjoybee.com/">版權侵犯|</a>
+        <%= link_to t(:faq), faq_index_path %>
+      </div>
+    </div>
+  </div>   
 </div>
 
