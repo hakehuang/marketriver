@@ -4,8 +4,11 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.xml
   def index
-    @customers = Customer.all
-
+    if current_user.id
+    @customers = Customer.where("user_id = :id", :id => current_user.id).all
+    else
+    @customers = nil
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @customers }
