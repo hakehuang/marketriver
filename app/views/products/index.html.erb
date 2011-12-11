@@ -33,7 +33,7 @@
         <% else  %>
  	<p><%= link_to image_tag("rails.png", :size => "64x64"),product %></p>
         <% end  %>
-        <font color="red">$<%= product.price %></font>
+        <font color="red">$<%= product.price %></font><br />
 	<span><%= link_to product.name, product %></span> 
      </div> 
     <% end %>
