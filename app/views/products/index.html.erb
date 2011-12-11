@@ -1,6 +1,6 @@
 <!--<h1><%= link_to "products", products_path %></h1>-->
 <% if request.fullpath != "/" %>
-<%= will_paginate %>
+<%= will_paginate_with_i18n %>
 <% end %>
 <ul>
 <% if @home_page  %>
@@ -67,5 +67,5 @@
 
 <% if request.fullpath != "/" %>
    <p class="floatstop"> 
-<%= will_paginate %>
+<%= will_paginate_with_i18n %>
 <% end  %>

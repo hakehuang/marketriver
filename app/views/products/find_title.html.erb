@@ -5,7 +5,7 @@
 <% else  %>
 <H2> <%= t(:results) %> </H2>
 <p></p>
-<%= will_paginate %>
+<%= will_paginate_with_i18n %>
 <% @products.each do |product| %>
 <div id="products">
      <li id="products">
@@ -22,6 +22,6 @@
     </li>
 </div>
 <% end %>
-<%= will_paginate %>
+<%= will_paginate_with_i18n %>
 <% end %>
 </ul>

@@ -408,6 +408,8 @@ tw:
   quantity: "數量"
   beepoint: "點數"
   location: "地址"
+  previous: "上一頁"
+  next: "下一頁"
   acknowledge: 
      ack: "致謝"
      cjg: "陳俊光"

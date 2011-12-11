@@ -14,7 +14,7 @@
   </tr>
 
   <% if current_user %>
-<%= will_paginate %>
+<%= will_paginate_with_i18n %>
 <% @transactions.each do |transaction| %>
   <% @pd = Product.find_by_id(transaction.product_id)  %>
   <% if (current_user.id == transaction.user_id) or (current_user.id == @pd.user_id) or current_user.email.to_s.match("hakehuang")  %>
@@ -56,6 +56,6 @@
 
 <br />
 
-<%= will_paginate %>
+<%= will_paginate_with_i18n %>
 <% end  %>
 <!-- %= link_to 'New Transaction', new_transaction_path %--->
