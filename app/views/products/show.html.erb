@@ -64,7 +64,7 @@
 <%= link_to t(:back), products_path %>
 <%= form_tag (:action => "borrow") do %>
 <%= hidden_field  "product", "id", :value => @product.id %>
-<%= submit_tag t(:getme), :disable_with => "..." %>
+<%= submit_tag t(:getme), :disable_with => "...", :confirm => t(:rys)  %>
 <% end %>
 </div>
 
