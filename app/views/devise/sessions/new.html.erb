@@ -2,22 +2,22 @@
   <fieldset>
   <legend><%= t(:login) %></legend>
   <div>
-  <%= f.label t(:email) %>
   <%= f.email_field :email, :size => 16 %>
+  <%= f.label t(:email) %>
   </div>
   <div>
-  <%= f.label t(:passwd) %>
   <%= f.password_field :password , :size => 16 %>
+  <%= f.label t(:passwd) %>
   </div>
   <% if devise_mapping.rememberable? -%>
   <div>
-  <%= f.label t(:rememberme) %>
   <%= f.check_box :remember_me %> 
+  <%= f.label t(:rememberme) %>
   </div>
   <% end -%>
   <div class="homehead">
-  <%= render :partial => "devise/shared/links" %>
   <%= f.submit t(:signin) , :size => 16 %>
+  <%= render :partial => "devise/shared/links" %>
   <div>
   </fieldset>
 <% end %>
