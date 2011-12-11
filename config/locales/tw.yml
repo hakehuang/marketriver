@@ -368,6 +368,7 @@ tw:
   getme: "申請交易"
   selfproduct: "是自己的產品"
   transactsubmit: "交易提交"
+  transactstatus: "交易更新"
   delete: "刪除"
   destory: "刪除"
   ays: "你確定?"

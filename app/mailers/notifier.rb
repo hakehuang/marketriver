@@ -5,4 +5,10 @@ class Notifier < ActionMailer::Base
     @product = p
     mail(:to => recipient.email, :subject => t(:transactsubmit)) 
   end
+  def update(recipient, p)
+    @user = recipient
+    @product = p
+    @update = true 
+    mail(:to => recipient.email, :subject => t(:transactstatus)) 
+  end
 end

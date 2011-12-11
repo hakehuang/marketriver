@@ -1,4 +1,5 @@
 
+<% if @update.nil?  %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,7 +25,35 @@ http://www.enjoybee.com
    </p> 
   </body>
 </html>
+<% else  %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>尊重的<%= @user.email %> 您好: </h1>
+    <p>
+      恭喜您申請的<%= @product.name %>, 物件編號: <%= @product.id%>  已經更新。 </p>
+    <p>
+     物主的信箱: <%= @product.user.email%> . 請迅速與對方聯絡，包租蜂感謝您的支持。
+    </p>
+     <%= link_to "this product", product_path(@product) %>
+   <br />
+   <p>  
+   順頌敬祺
+   </p>
+   <p>
+    包租蜂網路科技 敬上
+   </p>
+   <p>
+http://www.enjoybee.com
+   </p> 
+  </body>
+</html>
 
+
+<%end  %>
 
 
 

@@ -84,7 +84,10 @@ class TransactionsController < ApplicationController
     else
        @lc = User.find_by_id(@transaction.product.user.id).customers
        @bc = User.find_by_id(@transaction.user.id).customers
+       Notifier.update(current_user,@product).deliver
+       Notifier.update( @transaction.product.user.id, @product).deliver
     end
+        
     respond_to do |format|
       if @transaction.update_attributes(params[:transaction])
         format.html { redirect_to(@transaction, :notice => t(:successupdatetrans)) }

@@ -377,6 +377,7 @@
     getme: "Get Me"
     selfproduct: "elf product"
     transactsubmit: "Transaction Submited"
+    transactstatus: "Transaction Update"
     delete: "Delete"
     destory: "Destory"
     ays: "Are you sure?"
