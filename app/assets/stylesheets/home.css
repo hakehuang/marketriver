@@ -205,7 +205,7 @@ a.mainbook_box:visited{
 	margin-bottom: 0;
 	margin-left: 10px;
 }
-a.mainbook_box:hover{color:#000;text-decoration:none; }
+a.mainbook_box:hover{color:#FFFF00;text-decoration:none; }
 /*navigacija*/
 
 #navPyra {
@@ -321,7 +321,7 @@ a:visited {
 a:focus {color: #00FF00}  /* focused link */
 
 a:hover{
-	color: white; text-decoration: underline;
+	color: #00FFFF; text-decoration: underline;
 }
 a:active {
 	color: gray; text-decoration: none;
