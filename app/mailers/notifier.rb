@@ -3,6 +3,7 @@ class Notifier < ActionMailer::Base
   def transaction(recipient, p)
     @user = recipient
     @product = p
+    @update = false 
     mail(:to => recipient.email, :subject => t(:transactsubmit)) 
   end
   def update(recipient, p)

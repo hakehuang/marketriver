@@ -84,8 +84,8 @@ class TransactionsController < ApplicationController
     else
        @lc = User.find_by_id(@transaction.product.user.id).customers
        @bc = User.find_by_id(@transaction.user.id).customers
-       Notifier.update(current_user,@product).deliver
-       Notifier.update( @transaction.product.user, @product).deliver
+       Notifier.update(current_user,@pd).deliver
+       Notifier.update( @transaction.product.user, @pd).deliver
     end
         
     respond_to do |format|
