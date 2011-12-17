@@ -2,7 +2,6 @@
 <% if request.fullpath != "/" %>
 <%= will_paginate_with_i18n %>
 <% end %>
-<ul>
 <% if @home_page  %>
  <!-- p class="floatstop"><div class="float_left_list"><H2><%= t(:hotproduct)  %></H2></div></p--->
    <div id="hot_product">
@@ -64,7 +63,6 @@
     </div>
   <% end %>
 <% end %>
-</ul>
 
 <% if request.fullpath != "/" %>
    <p class="floatstop"> 

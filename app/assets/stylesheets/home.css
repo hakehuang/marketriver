@@ -68,7 +68,7 @@ div#body{
 	border: #A3BFE7;
         border: inset;
         border-width: 4px;
-        width: 20%;
+        width: 16%;
 	height: auto;
         overflow: hidden; 	
 	}
@@ -78,7 +78,7 @@ div#bodycetner{
 	background-image: url(/assets/bodycenter.gif);
 	background-repeat: no-repeat;
 */
-	width: 50%;
+	width: 65%;
 	}	
 div#bodyright{
 	float:right;
@@ -89,7 +89,7 @@ div#bodyright{
 	border: #A3BFE7;
         border: outset;
         border-width: 4px;
-	width: 8%;
+	width: 16%;
         overflow: hidden; 	
 	}	
 div#feat1 {
@@ -193,6 +193,14 @@ div#footer{
 	margin-top:0cm;
 }
 
+.ack{
+ color:green;
+ font-size: 14px;
+}
+.ack:hover{
+  color:blue;
+  font-size: 18px;
+}
 
 a.mainbook_box,
 a.mainbook_box:visited{
