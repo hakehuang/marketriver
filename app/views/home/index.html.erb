@@ -72,20 +72,11 @@ border:1px solid #333333;
   </div>
     <script type="text/javascript">
         $(function() {
-            $('#menu1').menuTree();
-
-            $('#menu2').menuTree({
+            $('#menu1').menuTree({
                 expandSpeed: 1000,
                 collapseSpeed: 1000,
-                expandEasing: 'easeOutBounce',
-                collapseEasing: 'easeOutBounce',
                 parentMenuTriggerCallback: false,
-                multiOpenedSubMenu: false
-            });
-            $('#menu3').menuTree({
-                expandedNode: '2.1'
-            }, function(rel) {
-                alert(rel);
+                multiOpenedSubMenu: true,
             });
         });
 </script>
@@ -94,8 +85,8 @@ border:1px solid #333333;
       <div id="menu1" class="menuTree">
         <% for @pt in  @product_types %> 
 	 <ul> 
-	  <li class="parent"><a href="#" mce_href=""><%= @pt.tname %></a>
-	   <ul>
+	  <li class="parent collapsed"><a href="#" mce_href=""><%= @pt.tname %></a>
+	   <ul style="display:none">
            <% for @pc in @pt.product_cataloges %>
 	    <li class="child"><%= link_to @pc.tname, products_search_path(:pt => @pt.id, :pc => @pc.id) %>
 	   <% end %>
