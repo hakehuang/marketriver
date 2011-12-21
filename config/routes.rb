@@ -10,6 +10,7 @@ Phoenix::Application.routes.draw do
   resources :aboutus
   resources :recruit
   resources :faq
+  resources :registsuccess
 
   match "products/find_title" => "products#find_title"
   match "/products/borrow" => "products#borrow"

@@ -34,7 +34,7 @@ tw:
       confirmed: 'Your account was successfully confirmed. You are now signed in.'
     registrations:
       signed_up: 'Welcome! You have signed up successfully.'
-      inactive_signed_up: 'You have signed up successfully. However, we could not sign you in because your account is %{reason}.'
+      inactive_signed_up: '您已註冊成功。但是，我們不能確認，因為您的帳戶 %{reason}.'
       updated: 'You updated your account successfully.'
       destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
     unlocks:
