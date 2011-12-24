@@ -3,3 +3,5 @@
 <p><%= t(:confirm) %></p>
 
 <p><%= link_to t(:cma), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<p><%= t(:visitlink) %></p>
+<%= raw(confirmation_url(@resource, :confirmation_token => @resource.confirmation_token))   %>

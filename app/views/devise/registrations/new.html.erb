@@ -12,11 +12,16 @@
   <p><%= f.label t(:password_confirmation) %><br />
   <%= f.password_field :password_confirmation %></p>
 
-   
+ 
   <p><%= f.label t(:servicerule) %><br />
-  <%= text_area_tag "servicerule", t(:servicerule), { :escape => false , :size => "25x10", :class => "content", :readonly =>""} %>
+  <textarea class="content" cols="25" id="servicerule" name="servicerule" readonly="readonly" rows="10">
+   </textarea>
+
 
   <p><%= f.submit t(:signup) %></p>
 <% end %>
+</script> 
+
+
 
 <%= render :partial => "devise/shared/links" %>
