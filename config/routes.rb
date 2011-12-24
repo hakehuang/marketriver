@@ -11,6 +11,7 @@ Phoenix::Application.routes.draw do
   resources :recruit
   resources :faq
   resources :registsuccess
+  resources :privacy
 
   match "products/find_title" => "products#find_title"
   match "/products/borrow" => "products#borrow"
