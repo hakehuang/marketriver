@@ -43,7 +43,7 @@ div#wrapper {
 	padding: 0;
 	font-family: Arial;
 	font-size: 16px;
-	color: #999;
+	color: #000000;
 	text-align: left;
 	voice-family: "\"}\"";
 	voice-family: inherit;
@@ -61,7 +61,7 @@ div#nav{float:left;
 	width: 1085px;
 	height: 45px;
 	}
-div#body{
+div#bodyleft{
 	float:left;
 	/*background-image: url(/assets/body.gif);
 	background-repeat: repeat-y;*/
@@ -72,7 +72,7 @@ div#body{
 	height: auto;
         overflow: hidden; 	
 	}
-div#bodycetner{
+div#bodycenter{
 	float:left;
 /*
 	background-image: url(/assets/bodycenter.gif);

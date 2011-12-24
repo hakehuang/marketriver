@@ -7,7 +7,7 @@ margin-right: 15px;
 color: blue;
 }
 #user_new fieldset{
-padding:1px;
+adding:1px;
 }
 #user_new legend{
 	font-weight:bold;
@@ -80,7 +80,7 @@ border:1px solid #333333;
             });
         });
 </script>
-  <div id="body">
+  <div id="bodyleft">
     <div class="body_p">
       <div id="menu1" class="menuTree">
         <% for @pt in  @product_types %> 
@@ -97,7 +97,7 @@ border:1px solid #333333;
       </div>
     </div>
   </div> 
-  <div id="bodycetner">
+  <div id="bodycenter">
       <%= render :template => 'products/index' %>
   </div>
   <div id="bodyright">
