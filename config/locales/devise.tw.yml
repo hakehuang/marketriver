@@ -37,6 +37,10 @@ tw:
       inactive_signed_up: '您已註冊成功。但是，我們不能確認，因為您的帳戶 %{reason}.'
       updated: 'You updated your account successfully.'
       destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+      reasons:
+        inactive: '不活躍'
+        unconfirmed: '沒有確認'
+        locked: '凍結'
     unlocks:
       send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
       unlocked: 'Your account was successfully unlocked. You are now signed in.'
@@ -46,8 +50,8 @@ tw:
       failure: 'Could not authorize you from %{kind} because "%{reason}".'
     mailer:
       confirmation_instructions:
-        subject: 'Confirmation instructions'
+        subject: '確認通知'
       reset_password_instructions:
-        subject: 'Reset password instructions'
+        subject: '重設密碼說明'
       unlock_instructions:
         subject: 'Unlock Instructions'
