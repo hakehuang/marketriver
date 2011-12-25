@@ -6,12 +6,14 @@ Phoenix::Application.routes.draw do
 
 #  devise_for :admins
 
+  resources :privacy
   resources :transactions
   resources :aboutus
   resources :recruit
   resources :faq
   resources :registsuccess
-  resources :privacy
+  resources :copyright
+  resources :benefit
 
   match "products/find_title" => "products#find_title"
   match "/products/borrow" => "products#borrow"

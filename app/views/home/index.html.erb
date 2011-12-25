@@ -51,6 +51,9 @@ border:1px solid #333333;
         <%= link_to t(:browse_products), products_path  %>
         </li>
         <li>
+        <%= link_to t(:benefit), benefit_index_path  %>
+        </li>
+        <li>
 <a href="https://imo.im/">網路語音客服</a>
         </li>
         <li>
@@ -130,8 +133,8 @@ border:1px solid #333333;
       <div class="footer_textL">
         <%= link_to t(:recruit), recruit_index_path %>
         <%= mail_to "happy@enjoybee.com", t(:blog) %>
-        <%= link_to "隱私權聲明", privacy_path</a>
-        <a href="http://www.enjoybee.com/">版權侵犯|</a>
+        <%= link_to t(:privacy), privacy_index_path %>
+        <%= link_to t(:copyright), copyright_index_path %>
         <%= link_to t(:faq), faq_index_path %>
       </div>
     </div>
