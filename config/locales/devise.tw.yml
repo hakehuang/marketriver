@@ -1,57 +1,57 @@
-# Additional translations at http://github.com/plataformatec/devise/wiki/I18n
+﻿# Additional translations at http://github.com/plataformatec/devise/wiki/I18n
 
 tw:
   errors:
     messages:
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      already_confirmed: "was already confirmed, please try signing in"
-      not_locked: "was not locked"
+      expired: "已經失效，請重新申請！"
+      not_found: "不好意思喔！沒有找到"
+      already_confirmed: "帳戶已啟用，請重新登入"
+      not_locked: "尚未啟用"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: "因為有一個錯誤導致 %{resource} 不能儲存！"
+        other: "因為有%{count}個錯誤，導致 %{resource} 不能儲存！ "
 
   devise:
     failure:
-      already_authenticated: 'You are already signed in.'
-      unauthenticated: 'You need to sign in or sign up before continuing.'
+      already_authenticated: '您已經登入了喔！'
+      unauthenticated: '您需要登入或登出已進行操作'
       unconfirmed: '帳戶尚未啟用，請查收您註冊的郵件信箱。'
       locked: 'Your account is locked.'
-      invalid: 'Invalid email or password.'
-      invalid_token: 'Invalid authentication token.'
-      timeout: 'Your session expired, please sign in again to continue.'
-      inactive: 'Your account was not activated yet.'
+      invalid: '無效的帳號或密碼。'
+      invalid_token: '無效的認證資訊'
+      timeout: '登入逾時，請重新登入'
+      inactive: '抱歉！您的帳戶尚未啟用！'
     sessions:
-      signed_in: 'Signed in successfully.'
-      signed_out: 'Signed out successfully.'
+      signed_in: '恭喜！成功登入'
+      signed_out: '您已成功登出！'
     passwords:
-      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
-      updated: 'Your password was changed successfully. You are now signed in.'
-      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
+      send_instructions: '您即將收到關於如何重新設定密碼的郵件'
+      updated: '您的密碼成功變更，歡迎登入！'
+      send_paranoid_instructions: "您將會收到如何變更密碼的郵件!"
     confirmations:
-      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
-      send_paranoid_instructions: 'If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
-      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+      send_instructions: '您即將收到啟用帳戶的通知信'
+      send_paranoid_instructions: '若您的信箱無誤，您會收到啟用帳戶的郵件'
+      confirmed: '您的帳戶已成功啟用'
     registrations:
-      signed_up: 'Welcome! You have signed up successfully.'
-      inactive_signed_up: '您已註冊成功。但是，我們不能確認，因為您的帳戶 %{reason}.'
-      updated: 'You updated your account successfully.'
-      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+      signed_up: '歡迎光臨包租蜂'
+      inactive_signed_up: '您已註冊成功。啟用信件已送至您的信箱 %{reason}.'
+      updated: '成功更新帳戶'
+      destroyed: '您的帳戶已移除，仍然希望下次仍能為您服務'
       reasons:
         inactive: '不活躍'
         unconfirmed: '沒有確認'
         locked: '凍結'
     unlocks:
-      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
-      unlocked: 'Your account was successfully unlocked. You are now signed in.'
-      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
+      send_instructions: '您即將收到啟用帳戶的通知信'
+      unlocked: '帳戶已啟用，歡迎登入'
+      send_paranoid_instructions: '如您的帳戶無誤，您即將收到啟用帳戶的通知信 '
     omniauth_callbacks:
-      success: 'Successfully authorized from %{kind} account.'
-      failure: 'Could not authorize you from %{kind} because "%{reason}".'
+      success: ' %{kind}帳戶已成功啟用 '
+      failure: '無法啟用 %{kind} 因為 "%{reason}".'
     mailer:
       confirmation_instructions:
-        subject: '確認通知'
+        subject: '啟用通知'
       reset_password_instructions:
-        subject: '重設密碼說明'
+        subject: '重設密碼通知'
       unlock_instructions:
-        subject: 'Unlock Instructions'
+        subject: '啟用通知'
