@@ -5,7 +5,8 @@ Phoenix::Application.routes.draw do
   end
 
 #  devise_for :admins
-
+  resources :leftpop
+  resources :rightpop
   resources :privacy
   resources :transactions
   resources :aboutus

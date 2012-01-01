@@ -1,0 +1,2 @@
+module LeftpopHelper
+end

@@ -1,0 +1,2 @@
+class LeftpopController < ApplicationController
+end

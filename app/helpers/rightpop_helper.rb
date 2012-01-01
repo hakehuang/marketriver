@@ -1,0 +1,2 @@
+module RightpopHelper
+end

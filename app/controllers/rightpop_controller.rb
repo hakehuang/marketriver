@@ -1,0 +1,2 @@
+class RightpopController < ApplicationController
+end
