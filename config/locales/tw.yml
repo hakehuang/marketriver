@@ -428,8 +428,8 @@ tw:
   copyright: "版權聲明"
   benefit: "蜂友好康報你知"
   voiceservice: "網路語音客服"
-  visitor: "尊敬的來賓"
-  customer: "尊敬的蜂友"
+  visitor: "尊敬的來賓, 包租蜂歡迎您!"
+  customer: "尊敬的蜂友, 包租蜂歡迎您!"
   resendmail: "重發確認郵件"
   acknowledge: 
      ack: "致謝"
