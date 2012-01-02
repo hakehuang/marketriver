@@ -1,9 +1,9 @@
 class TransactionsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!
   # GET /transactions
   # GET /transactions.xml
   def index
-    @transactions = Transaction.paginate(:page => params[:page])
+    @transactions = Transaction.where("user_id = :id", :id => current_user.id).paginate(:page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @transactions }
