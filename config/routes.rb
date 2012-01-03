@@ -16,11 +16,13 @@ Phoenix::Application.routes.draw do
   resources :copyright
   resources :benefit
   resources :voiceservice
-
-  match "products/find_title" => "products#find_title"
+  
+  match "/bindex" => "transactions#bindex"
+  match "/products/find_title" => "products#find_title"
   match "/products/borrow" => "products#borrow"
   match "/products/update_cata_level_2" => "products#update_cata_level_2"
   match "/products/search" => "products#search"
+  
   resources :products do
   resources :DataFiles
   end

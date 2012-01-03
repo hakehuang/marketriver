@@ -3,7 +3,21 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.xml
   def index
-    @transactions = Transaction.all.paginate(:page => params[:page])
+    #@transactions = Transaction.all.paginate(:page => params[:page])
+    #order(:updated_at)
+    @transactions = Transaction.joins(:product => :user).where("users.id = :id", :id => current_user.id).paginate(:page => params[:page])
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @transactions }
+    end
+  end
+  
+  def bindex
+    #@transactions = Transaction.all.paginate(:page => params[:page])
+    #order(:updated_at)
+    @transactions = Transaction.where("user_id = :id", :id => current_user.id).order(:updated_at).paginate(:page => params[:page])
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @transactions }

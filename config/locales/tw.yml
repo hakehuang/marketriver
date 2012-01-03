@@ -383,7 +383,7 @@ tw:
   tranetime: "交易成功日期"
   borrower: "借方信息"
   lender: "貸方信息"
-  listtrans: "交易紀錄清單"
+  listtrans: "交易紀錄清單<點擊切換申請方>"
   borrowing: "意向"
   confirming: "確認意向"
   lenting: "交易成功"
