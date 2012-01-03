@@ -3,7 +3,7 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.xml
   def index
-    @transactions = Transaction.where("user_id = :id", :id => current_user.id).paginate(:page => params[:page])
+    @transactions = Transaction.all.paginate(:page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @transactions }
