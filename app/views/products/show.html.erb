@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <div class="float_left">
+<%= form_tag (:action => "borrow") do %>
+<%= hidden_field  "product", "id", :value => @product.id %>
+<%= submit_tag t(:getme), :disable_with => "..." %>
+<% end %>
+
 <p>
   <b><%= t(:name) %></b>
   <%= @product.name %>
@@ -61,10 +66,6 @@
 </p>
 <%= link_to t(:edit), edit_product_path(@product) %> |
 <%= link_to t(:back), products_path %>
-<%= form_tag (:action => "borrow") do %>
-<%= hidden_field  "product", "id", :value => @product.id %>
-<%= submit_tag t(:getme), :disable_with => "..." %>
-<% end %>
 </div>
 
 <div>
