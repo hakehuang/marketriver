@@ -16,6 +16,7 @@
 <%= will_paginate_with_i18n @transactions%>
 <% @transactions.each do |transaction| %>
     <td>
+      <% @pd = Product.find_by_id(transaction.product_id)  %>
       <% if @pd %>
         <%= link_to @pd.name, product_path(@pd)%>
       <% end %>
