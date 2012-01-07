@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
     end
     
     if @ss == 1
-      redirect_to products_path,:notice => t(:transactexist)
+      redirect_to bindex_path,:notice => t(:transactexist)
     else
      if (current_user.id != @product.user.id )
 	@render = User.find(@product.user_id)
@@ -64,7 +64,7 @@ class ProductsController < ApplicationController
         Transaction.logtransaction(current_user.id,@product.id, 1, @bc,@lc)
         Notifier.transaction(current_user,@product).deliver
         Notifier.transaction( @render, @product).deliver
-        redirect_to products_path,:notice => t(:transactsubmit)
+        redirect_to bindex_path,:notice =>  @product.name + t(:transactsubmit)
         #else
 	#	redirect_to products_path,:notice => 'you can not borrow this product'
         #end

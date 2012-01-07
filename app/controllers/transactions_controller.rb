@@ -117,11 +117,18 @@ class TransactionsController < ApplicationController
   # DELETE /transactions/1.xml
   def destroy
     @transaction = Transaction.find(params[:id])
+    @cid =  @transaction.user_id
     @transaction.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(transactions_url) }
-      format.xml  { head :ok }
+    if @cid == current_user.id
+    	respond_to do |format|
+      		format.html { redirect_to(bindex_url) }
+      		format.xml  { head :ok }
+    	end
+    else
+    	respond_to do |format|
+      		format.html { redirect_to(transactions_url) }
+      		format.xml  { head :ok }
+    	end
     end
   end
 end
