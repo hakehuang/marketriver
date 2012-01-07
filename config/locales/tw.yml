@@ -431,6 +431,8 @@ tw:
   visitor: "尊敬的來賓, 包租蜂歡迎您!"
   customer: "尊敬的蜂友, 包租蜂歡迎您!"
   resendmail: "重發確認郵件"
+  address: "地址"
+  personalid: "身份證"
   acknowledge: 
      ack: "致謝"
      cjg: "陳俊光"
