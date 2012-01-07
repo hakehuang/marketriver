@@ -1,4 +1,5 @@
 class ProductTypesController < ApplicationController
+  before_filter :isadmin
   # GET /product_types
   # GET /product_types.xml
   def index
