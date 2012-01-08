@@ -368,6 +368,8 @@ tw:
   edit: "修改"
   editcustomer: "維護蜂友資訊"
   editproduct: "產品資訊編輯"
+  notyourinform: "你是不是這個客戶"
+  newcustomerok: "新添加客戶信息成功"
   getme: "申請交易"
   selfproduct: "是自己的產品"
   transactsubmit: "交易提交"

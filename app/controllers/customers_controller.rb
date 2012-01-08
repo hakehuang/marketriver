@@ -46,7 +46,7 @@ class CustomersController < ApplicationController
   def edit
     @customer = Customer.find(params[:id])
     if ( @customer.user_id != current_user.id)
-       redirect_to customers_path,:notice => 'You do not own this customer'
+       redirect_to customers_path,:notice => t(:notyourinform)
     end
   end
 
@@ -58,7 +58,7 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to(@customer, :notice => 'Customer was successfully created.') }
+        format.html { redirect_to(@customer, :notice => t(:newcustomerok)) }
         format.xml  { render :xml => @customer, :status => :created, :location => @customer }
       else
         format.html { render :action => "new" }
