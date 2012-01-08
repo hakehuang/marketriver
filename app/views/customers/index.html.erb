@@ -20,7 +20,7 @@
     <td><%= customer.Status %></td>
     <td><%= customer.user.id %></td>
     <td><%= link_to t(:show), customer %></td>
-    <td><%= link_to t(:edit), edit_customer_path(customer) %></td>
+    <td><%= link_to t(:editcustomer), edit_customer_path(customer) %></td>
     <td><%= link_to t(:destory), customer, :confirm => t(:ays), :method => :delete %></td>
   </tr>
 <% end %>
