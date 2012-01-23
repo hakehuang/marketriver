@@ -32,7 +32,7 @@ tw:
       send_instructions: '您即將收到啟用帳戶的通知信'
       send_paranoid_instructions: '若您的信箱無誤，您會收到啟用帳戶的郵件'
       confirmed: '您的帳戶已成功啟用'
-    registrations:
+    my_registration:
       signed_up: '歡迎光臨包租蜂'
       inactive_signed_up: '您已註冊成功。啟用信件已送至您的信箱 %{reason}.'
       updated: '成功更新帳戶'

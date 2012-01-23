@@ -29,6 +29,7 @@ Phoenix::Application.routes.draw do
 
   resources :customers
 
+  devise_for :users, :controllers => { :registrations => "my_registration" }
   devise_for :users do
   match 'logout' => 'devise/sessions#destroy'
   end

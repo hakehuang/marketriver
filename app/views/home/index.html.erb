@@ -39,7 +39,9 @@ border:1px solid #333333;
 <div id="wrapper">
   <div id="header">
   <!---%= link_to image_tag("logo.jpg", :class => "logo"), root_path %-->
+  <% if ! user_signed_in?   %>
   <%= render :template => 'devise/sessions/new' %>
+  <% end  %>
   </div>
   <div id="nav">
     <div id="navPyra">
