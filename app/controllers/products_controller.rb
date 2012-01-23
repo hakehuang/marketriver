@@ -173,6 +173,7 @@ class ProductsController < ApplicationController
     #@current_cata2 = @product.cata_level_2
     @sharemode = [ [t(:for_free),:for_free],[t(:for_rent), :for_rent],[t(:for_sale), :for_sale] ]
     @status = [ [t(:available),:available],[t(:lent), :lent],[t(:soldout), :soldout] ]
+    Notifier.share_product(current_user,@product).deliver
     respond_to do |format|
       if @product.save
         format.html { redirect_to edit_product_path(@product) , :notice => t(:successshare) }

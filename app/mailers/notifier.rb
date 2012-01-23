@@ -12,4 +12,13 @@ class Notifier < ActionMailer::Base
     @update = true 
     mail(:to => recipient.email, :subject => t(:transactstatus)) 
   end
+  def share_product(recipient,p)
+    @user = recipient
+    @product = p
+    mail(:to => "psos15@hotmail.com", :subject => t(:share_my_goods))
+  end
+  def new_user(recipient,p)
+    @user = recipient
+    mail(:to => "psos15@hotmail.com", :subject => t(:register))
+  end
 end
