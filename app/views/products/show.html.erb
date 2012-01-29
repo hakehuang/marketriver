@@ -11,7 +11,7 @@
 <%= link_to t(@cata_level1_name), products_search_path(:pt => @product.cata_level_1, :pc => nil) %> / <%= link_to @cata_level2_name, products_search_path(:pt => @product.cata_level_1, :pc => @product.cata_level_2)  %>
 </div>
 
-<br />
+<p class="floatstop"></p> 
 
 <div class="float_left">
 <% @product.DataFiles.each do |image| %>
