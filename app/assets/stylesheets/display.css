@@ -17,7 +17,7 @@ padding:0.2em 0.6em;
 border-right:1px solid white;
 }
 .floatstop{clear:both;}
-.content{width:200px;height:122px;overflow-y:auto}
+.content{width:600px;height:122px;overflow-y:auto}
 .homehead{
 color: gray;
 text-decoration: none;
