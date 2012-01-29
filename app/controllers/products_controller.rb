@@ -19,7 +19,13 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.where("cata_level_1 = :type AND cata_level_2 = :cata",{ :type => params[:pt] ,:cata =>  params[:pc] }).paginate(:page => params[:page])
+    if ! params[:pt].nil?
+       if params[:pc].nil?
+	@products = Product.where("cata_level_1 = :type",{ :type => params[:pt]}).paginate(:page => params[:page],:per_page => 30)
+       else
+	@products = Product.where("cata_level_1 = :type AND cata_level_2 = :cata",{ :type => params[:pt] ,:cata =>  params[:pc] }).paginate(:page => params[:page],:per_page => 30)
+    	end
+    end
     render 'products/index'
   end
 

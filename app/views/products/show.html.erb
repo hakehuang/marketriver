@@ -1,76 +1,109 @@
 <p id="notice"><%= notice %></p>
 
+<div id="bodyleft"> 
+  <%= render :template => 'leftpop/index' %>
+</div>
+<div id="bodyright"> 
+  <%= render :template => 'rightpop/index' %>
+</div>
+<div id="bodycenter">
 <div class="float_left">
+<%= link_to t(@cata_level1_name), products_search_path(:pt => @product.cata_level_1, :pc => nil) %> / <%= link_to @cata_level2_name, products_search_path(:pt => @product.cata_level_1, :pc => @product.cata_level_2)  %>
+</div>
+
+<br />
+
+<div class="float_left">
+<% @product.DataFiles.each do |image| %>
+ <%= image_tag(image.path, :size => "128x128", :alt =>"missing pic" ) %>
+<% end %>
 <%= form_tag (:action => "borrow") do %>
 <%= hidden_field  "product", "id", :value => @product.id %>
 <%= submit_tag t(:getme), :disable_with => "..." %>
 <% end %>
-
-<p>
+</div>
+<div>
+<table border="1">
+  <tr>
+    <td>
   <b><%= t(:name) %></b>
+    </td>
+    <td>
   <%= @product.name %>
-</p>
-
-<p>
+    </td>
+  </tr>
+  <tr>
+   <td>
   <b><%= t(:title)  %></b>
+   </td>
+   <td>
   <%= @product.title %>
-</p>
-
-  <b><%= t(:content)  %></b>
-<p>
-  <%= text_area_tag t(:content), @product.content, { :escape => false , :size => "25x10", :class => "content", :readonly =>""} %>
-</p>
-
-<p>
+   </td>
+  </tr>
+   <tr>
+   <td>
   <b><%= t(:status) %></b>
+   </td>
+   <td>
   <%= t(@product.status) %>
-  <!--%= t(@status[@product.status.to_i - 1][0]) %-->
-</p>
-
-<p>
+   </td>
+  </tr>
+  <tr>
+   <td>
   <b><%= t(:price)  %></b>
+   </td>
+   <td>
   <%= @product.price %>
-</p>
-
-<p>
+   </td>
+  </tr>
+  <tr>
+   <td>
   <b><%= t(:types) %></b>
+   </td>
+   <td>
   <%= t(@cata_level1_name)  %>
-</p>
-
-<p>
+   </td>
+  </tr>
+  <tr>
+   <td>
   <b><%= t(:cataloges)  %></b>
+   </td>
+   <td>
   <%= t(@cata_level2_name)  %>
-</p>
-
-<p>
+   </td>
+  </tr>
+  <tr>
+   <td>
   <b><%= t(:sharemode) %></b>
+   </td>
+   <td>
   <%= t(@product.sharemode) %>
-</p>
+   </td>
+  </tr>
+</table>
+</div>
 
+<div >
 <p>
   <br><%=  t(:quantity)  %></b>
    <%= @product.quantity  %>
-</p>
-
-<p>
   <br><%=  t(:beepoint)  %></b>
    <%= @product.beepoint  %>
-</p>
-<p>
   <br><%=  t(:credit)  %></b>
    <%= @product.credit  %>
-</p>
-<p>
   <br><%=  t(:location)  %></b>
    <%= @product.location  %>
 </p>
-<%= link_to t(:edit), edit_product_path(@product) %> |
-<%= link_to t(:back), products_path %>
 </div>
 
 <div>
-<% @product.DataFiles.each do |image| %>
- <%= image_tag(image.path, :size => "128x128", :alt =>"missing pic" ) %>
-<% end %>
-</div>
+<b><%= t(:content)  %></b>
+<p>
+  <%= text_area_tag t(:content), @product.content, { :escape => false , :size => "25x10", :class => "content", :readonly =>""} %>
+</p>
+<div>
+
+<%= link_to t(:edit), edit_product_path(@product) %> |
+<%= link_to t(:back), products_path %>
+
 
