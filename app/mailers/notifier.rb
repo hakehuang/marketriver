@@ -15,10 +15,10 @@ class Notifier < ActionMailer::Base
   def share_product(recipient,p)
     @user = recipient
     @product = p
-    mail(:to => "psos15@hotmail.com", :subject => t(:share_my_goods))
+    mail(:to => "psos15@gmail.com", :subject => t(:share_my_goods))
   end
   def new_user(recipient)
     @email = recipient
-    mail(:to => "psos15@hotmail.com", :subject => t(:register))
+    mail(:to => "psos15@gmail.com", :subject => t(:register))
   end
 end
