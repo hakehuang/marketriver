@@ -8,7 +8,7 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: Phoenix_development
+  database: vitai_development
   pool: 5
   username: root
   password: hellor
@@ -20,7 +20,7 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: Phoenix_test
+  database: vitai_test
   pool: 5
   username: root
   password: hellor
@@ -29,7 +29,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: Phoenix_production
+  database: vitai_production
   pool: 5
   username: root
   password: hellor

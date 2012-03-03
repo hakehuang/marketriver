@@ -105,34 +105,15 @@ border:1px solid #333333;
       <%= render :template => 'products/index' %>
   </div>
   <div id="bodyright">
-  <p class="ack"><%= t('acknowledge.ack')  %>  </p>
-  <marquee scrollamount="2" direction="up" >
-  <p><%= t('acknowledge.cjg')  %></p>   
-  <p><%= t('acknowledge.xrt')  %></p>   
-  <p><%= t('acknowledge.zqx')  %></p>   
-  <p><%= t('acknowledge.cyq')  %></p>   
-  <p><%= t('acknowledge.wwl')  %></p>   
-  <p><%= t('acknowledge.lwr')  %></p>   
-  <p><%= t('acknowledge.wzj')  %></p>   
-  <p><%= t('acknowledge.google')  %></p>   
-  <p><%= t('acknowledge.delta')  %></p>   
-  <p><%= t('acknowledge.yzu')  %></p>   
-  <p>Money</p>   
-  <p>Robin</p>   
-  <p>Hake</p>   
-  <p>May Be you are the next</p> 
-  </marquee>
-  <%= render :template => 'rightpop/index' %>
-  <%= render :template => 'leftpop/index' %>
   </div>
   <div id="footer">
     <div class="footer_p">
       <%= link_to image_tag("facebook_24.png"), root_path %>
      <%= link_to image_tag("rss_24.png"), root_path %>
-      <a href="http://www.enjoybee.com/">Copyright 2011-2012 包租蜂網路科技 ALL RIGHTS RESERVED.</a>
+      <a href="http://www.enjoybee.com/">Copyright 2012 VitaiMed. ALL RIGHTS RESERVED.</a>
       <div class="footer_textL">
         <%= link_to t(:recruit), recruit_index_path %>
-        <%= mail_to "happy@enjoybee.com", t(:blog) %>
+        <%= mail_to "sales@vitaimed.com", t(:blog) %>
         <%= link_to t(:privacy), privacy_index_path %>
         <%= link_to t(:copyright), copyright_index_path %>
         <%= link_to t(:faq), faq_index_path %>
