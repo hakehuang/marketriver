@@ -1,4 +1,4 @@
-# US English translations for Ruby on Rails
+﻿# US English translations for Ruby on Rails
 #
 # Use this as the base for the locale file of your language.
 en:
@@ -432,3 +432,4 @@ en:
      yh: "Yanghua"
      wytech: "Wenye Tech"
      yzu: "Yuanzhi University"
+
