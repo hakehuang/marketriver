@@ -1,4 +1,4 @@
-# US English translations for Ruby on Rails
+﻿# US English translations for Ruby on Rails
 #
 # Use this as the base for the locale file of your language.
 
@@ -404,7 +404,8 @@
     aboutus: "About us"
     faq: "FAQ"
     recruit: "Recruit"
-    wtitle: "Enjoybee"
+    wtitle: "VitaiMed"
+    wdesc: "health care devices"
     fyp: "Forgot your password"
     smrpi: "Send me reset password instructions"
     myprofile: "My profile"
