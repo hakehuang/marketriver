@@ -24,6 +24,8 @@ gem 'will_paginate', '3.0.pre2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# meta
+gem 'meta-tags', :require => 'meta_tags'
 
 # Use unicorn as the web server
 # gem 'unicorn'
