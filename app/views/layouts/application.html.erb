@@ -109,6 +109,19 @@ window.onload=staticbar
     <%= link_to t(:logout), logout_path, :method => :delete %>
     <%= link_to t(:edit_my_profile_info), customers_path %>
   <% end %>
+ <div id="topmain">
+            <div class="bt12" id="top1">
+                专业家庭医疗护理用品服提供商！</div>
+            <div class="bt12" id="top2an">
+                <div align="right">
+                <a id="ctl00_lbGoodsCart" class="zi" href="javascript:__doPostBack('ctl00$lbGoodsCart','')" style="text-decoration:none;">我的购物车</a> &nbsp;&nbsp; | &nbsp;&nbsp;
+                <a id="ctl00_lbGoodsOrder" class="zi" href="javascript:__doPostBack('ctl00$lbGoodsOrder','')" style="text-decoration:none;">我的订单</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+                    <a>投诉反馈</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+                    <a>客戶留言</a>&nbsp;&nbsp; 
+                    <a>帮助中心</a>
+                </div>
+            </div>
+</div>
 <% if controller_name != 'home'  %>
 <%= link_to t(:backtohome),root_path %>
 <% end %>
