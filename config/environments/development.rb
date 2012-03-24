@@ -30,21 +30,21 @@ Phoenix::Application.configure do
 
   #config.action_mailer.default_url_options = { :host => 'localhost' }
 
-  #config.action_mailer.delivery_method = :smtp
-  #config.action_mailer.smtp_settings = {
-  #:address              => "smtp.gmail.com",
-  #:port                 => 587,
-  #:domain               => 'baci.lindsaar.net',
-  #:user_name            => 'hakehuang@gmail.com',
-  #:password             => 'hellorole',
-  #:authentication       => 'plain',
-  #:enable_starttls_auto => true  }
-
-  config.action_mailer.default_url_options = { :host => 'www.enjoybee.com:80' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :address              => "mail.enjoybee.com",
-  :port                 => 25,
-  :domain               => 'enjoybee.com',
-  :enable_starttls_auto => false}  
+  :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :domain               => 'baci.lindsaar.net',
+  :user_name            => 'hakehuang@gmail.com',
+  :password             => 'hellorole',
+  :authentication       => 'plain',
+  :enable_starttls_auto => true  }
+
+  #config.action_mailer.default_url_options = { :host => 'www.enjoybee.com:80' }
+  #config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.smtp_settings = {
+  #:address              => "mail.enjoybee.com",
+  #:port                 => 25,
+  #:domain               => 'enjoybee.com',
+  #:enable_starttls_auto => false}  
 end
