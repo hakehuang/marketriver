@@ -326,7 +326,7 @@ tw:
     auto: "汽車"
     moto: "機車"
     autorelated: "汽車百貨"
-    moto: "機車百貨"
+    motocar: "機車百貨"
     others: "其它"
   others:
     others: "其它"
