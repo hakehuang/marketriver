@@ -40,11 +40,11 @@ Phoenix::Application.configure do
   #:authentication       => 'plain',
   #:enable_starttls_auto => true  }
 
-  config.action_mailer.default_url_options = { :host => 'www.enjoybee.com:80' }
+  config.action_mailer.default_url_options = { :host => 'localhost:80' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :address              => "mail.enjoybee.com",
+  :address              => "localhost",
   :port                 => 25,
-  :domain               => 'enjoybee.com',
+  :domain               => 'localhost',
   :enable_starttls_auto => false}  
 end

@@ -1,5 +1,5 @@
 class ProductCatalogesController < ApplicationController
-  before_filter :isadmin
+  #before_filter :isadmin
  def create
     @product_type = ProductType.find(params[:product_type_id])
     @product_cataloge = @product_type.product_cataloges.create(params[:product_cataloge])
