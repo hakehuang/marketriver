@@ -22,10 +22,11 @@ gem 'jquery-rails'
 gem 'will_paginate', '3.0.pre2'
 
 # Bundle edge Rails instead:
+gem 'meta-tags', :require => 'meta_tags'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # meta
-gem 'meta-tags', :require => 'meta_tags'
+#gem 'meta-tags', :git => 'git://github.com/kpumuk/meta-tags.git'
 
 # Use unicorn as the web server
 # gem 'unicorn'
