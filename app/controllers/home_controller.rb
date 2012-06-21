@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  #impressionist :actions=>[:index]  
+  
   def index
     #@products = Product.all(:order => "RAND()", :limit => 5)
     #@products = Product.where("cata_level_1 = :type", :type => 1).all(:order => "RAND()", :limit => 10)
