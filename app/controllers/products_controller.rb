@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  impressionist :actions=>[:show]  
   before_filter :authenticate_user!,:except => [:index, :show, :search, :find_title]
   # GET /products
   # GET /products.xml
@@ -85,7 +86,7 @@ class ProductsController < ApplicationController
     if params[:id].nil? 
      redirect_to products_path
     end
-    
+   
     @product = Product.find(params[:id])
     @status = [ [t(:available),:available],[t(:lent), :lent],[t(:soldout), :soldout] ]
     @sharemode = [ [t(:for_free),:for_free],[t(:for_rent), :for_rent],[t(:for_sale), :for_sale] ]
@@ -106,6 +107,7 @@ class ProductsController < ApplicationController
        @cata_level1_name = "undefined"
         @cata_level2_name = "undefined"
     end
+    #impressionist(@product,:message => "wtf is a widget?")  
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @product }

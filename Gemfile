@@ -8,6 +8,7 @@ gem 'devise'
 
 gem 'enum_column3'
 
+gem 'activesupport'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,6 +19,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem 'impressionist'
 
 gem 'will_paginate', '3.0.pre2'
 
