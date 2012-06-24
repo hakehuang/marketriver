@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
   has_many :impressions, :as=>:impressionable
+  has_paper_trail :on => [:update, :destroy]
   belongs_to :user
   has_many :DataFiles, :dependent => :destroy
   has_many :Transactions, :dependent => :destroy

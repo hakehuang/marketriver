@@ -105,6 +105,11 @@
 
 <%=@product.unique_impression_count %><br />
 
+version:
+<% if (@product.versions) %>
+<%=@product.versions.last.index %><br />
+<% end %>
+
 <%= link_to t(:edit), edit_product_path(@product) %> |
 <%= link_to t(:back), products_path %>
 
