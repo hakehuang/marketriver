@@ -24,6 +24,8 @@ gem 'impressionist'
 
 gem 'will_paginate', '3.0.pre2'
 
+gem 'paper_trail', '~> 2'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
