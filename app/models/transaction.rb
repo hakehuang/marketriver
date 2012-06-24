@@ -1,4 +1,5 @@
 class Transaction < ActiveRecord::Base
+  has_paper_trail :on => [:update, :destroy]
   belongs_to :product
   belongs_to :user
   validates_columns :status
