@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
-  #impressionist :actions=>[:index]  
-  
+  #impressionist :actions=>[:index] 
   def index
     #@products = Product.all(:order => "RAND()", :limit => 5)
     #@products = Product.where("cata_level_1 = :type", :type => 1).all(:order => "RAND()", :limit => 10)
@@ -13,11 +12,25 @@ class HomeController < ApplicationController
     @producs_prompt = Product.where("prompt = :pr", :pr => true).all(:order => "RAND()", :limit => 30)
     #only keep code here
     #current_user.update_attribute :admin, true
-
+    #logger.debug "debugging" + @@cnt.to_s
+    @icnt = 1688
+    @counter = Counter.all
+    if @counter.length == 0 
+	@counter = Counter.new
+	@counter.number = 1688
+	@counter.save
+    else
+	@icnt = @counter.first.number
+    end
+    #logger.debug "debuggingg" + session[:stay]
+    if session[:stay].nil?
+	@counter.first.number += 1
+	@counter.first.save
+    end
+    session[:stay] = request.session_options[:id]
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @products }
     end
-
   end
 end
