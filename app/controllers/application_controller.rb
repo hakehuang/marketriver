@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  
   def after_sign_in_path_for(resource)
     return stored_location_for(resource) || registsuccess_path
   end
